@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation"; // Use the correct import for `useRouter`
+import Link from "next/link";
 
 export default function HomePage() {
   const isRendered = useRef(false);
@@ -37,18 +38,17 @@ export default function HomePage() {
               Bluepilot: Enhances interviews by providing real-time feedback, suggesting questions, offering preparation tips, and improving efficiency and effectiveness.
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
-              <button
+              <Link href={"/get-started"}><button
                 className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-3 text-lg w-44"
                 
               >
                 Get Started
-              </button>
-              <button
-                className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg w-44 hover:bg-gray-200"
-              
-              >
-                Learn More
-              </button>
+              </button></Link>
+              <Link href="/LearnMore"> {/* Use Link to navigate to the Learn More page */}
+    <button className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg w-44 hover:bg-gray-200">
+      Learn More
+    </button>
+  </Link>
             </div>
           </div>
         </section>
