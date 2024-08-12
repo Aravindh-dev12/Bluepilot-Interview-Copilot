@@ -8,7 +8,7 @@ const ServicePage: React.FC = () => {
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
-        left: -500, // Adjust this value based on your blog card width
+        left: -900, // Adjust this value based on your blog card width
         behavior: 'smooth',
       });
     }
@@ -17,7 +17,7 @@ const ServicePage: React.FC = () => {
   const scrollRight = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
-        left: 500, // Adjust this value based on your blog card width
+        left: 900, // Adjust this value based on your blog card width
         behavior: 'smooth',
       });
     }
@@ -81,7 +81,7 @@ const ServicePage: React.FC = () => {
         </section>
 
         {/* Blogs Section */}
-        <section className="md:w-2/3 flex flex-col items-center mt-40"> {/* Increased width */}
+        <section className="md:w-[59%] flex flex-col items-center mt-40">
           <div className="relative w-full overflow-hidden">
             <div className="overflow-hidden">
               <div
@@ -92,7 +92,6 @@ const ServicePage: React.FC = () => {
                   scrollbarWidth: 'none', // Firefox
                   msOverflowStyle: 'none', // Internet Explorer and Edge
                   WebkitOverflowScrolling: 'touch', // For smooth scrolling on iOS
-                  width: 'calc(100% + 2rem)' // Increase width to create extra space for scrolling
                 }}
               >
                 {/* Scrollable Blog Cards */}

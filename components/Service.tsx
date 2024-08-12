@@ -23,7 +23,7 @@ const ServicePage: React.FC = () => {
         <section className="md:w-1/2 grid grid-cols-1 gap-8">
           <ServiceCard
             title="Think ahead"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque congue eleifend leo non luctus. Quisque ligula ex, rutrum a malesuada eu, pellentesque quis diam."
+            description="Advance your career through ongoing skill development and hands-on experience, continuously learning, applying new techniques, and gaining valuable insights"
             icon={<svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C10.3431 2 9 3.34315 9 5C9 6.65685 10.3431 8 12 8C13.6569 8 15 6.65685 15 5C15 3.34315 13.6569 2 12 2Z" fill="black"/>
               <path d="M12 9C14.2091 9 16 10.7909 16 13V15H8V13C8 10.7909 9.79086 9 12 9Z" fill="black"/>
@@ -32,7 +32,7 @@ const ServicePage: React.FC = () => {
           />
           <ServiceCard
             title="Nail the assessment"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque congue eleifend leo non luctus. Quisque ligula ex, rutrum a malesuada eu, pellentesque quis diam."
+            description="Gain confidence with Interview and Coding Copilot® by leveraging real-time transcription and personalized assistance, enhancing your interview and coding skills effectively"
             icon={<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 1C10.3431 1 9 2.34315 9 4C9 5.65685 10.3431 7 12 7C13.6569 7 15 5.65685 15 4C15 2.34315 13.6569 1 12 1Z" stroke="black" strokeWidth="2"/>
               <path d="M4 20C4 17.2388 6.23876 15 9 15H15C17.7612 15 20 17.2388 20 20H4Z" stroke="black" strokeWidth="2"/>
@@ -42,7 +42,7 @@ const ServicePage: React.FC = () => {
           />
           <ServiceCard
             title="Keep close"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque congue eleifend leo non luctus. Quisque ligula ex, rutrum a malesuada eu, pellentesque quis diam."
+            description="Remain engaged through automated follow-ups, review detailed interview summaries, and effectively negotiate your salary for optimal career advancement"
             icon={<svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 4C8.68629 4 6 6.68629 6 10C6 13.3137 8.68629 16 12 16C15.3137 16 18 13.3137 18 10C18 6.68629 15.3137 4 12 4Z" stroke="black" strokeWidth="2" fill="none"/>
               <path d="M12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6Z" stroke="black" strokeWidth="2" fill="none"/>

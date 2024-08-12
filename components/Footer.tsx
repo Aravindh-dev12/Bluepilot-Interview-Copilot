@@ -5,9 +5,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-[#383838] text-white py-6 md:py-10 lg:py-14 w-full rounded-t-[20px] md:rounded-t-[50px]">
       <div className="container mx-auto text-center">
-        <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold leading-none">
-          BluePilot
-        </h1>
+      <h1 className="text-4xl md:text-6xl lg:text-8xl xl:text-9xl 18xl:text-28xl font-bold leading-tight">
+        BluePilot
+      </h1>
         <hr className="my-6 md:my-8 border-white border-opacity-30 w-4/5 md:w-2/3 mx-auto" />
         <div className="flex flex-col md:flex-row justify-between items-center text-xs md:text-sm mt-4 px-4 md:px-8 lg:px-20">
           <span>© 2024 BluePilot, Inc.</span>

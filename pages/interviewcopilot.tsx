@@ -158,10 +158,10 @@ const LearnMore = () => {
         </h2>
           <Link href="/get-started">
           <button
-            className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-8 py-5 text-3xl w-64"
-          >
-            Get Started
-          </button>
+                  className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-3 text-lg w-44"
+                >
+                  Get Started
+            </button>
           </Link>
         </div>
       </main>

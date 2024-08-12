@@ -38,17 +38,20 @@ export default function HomePage() {
               Bluepilot: Enhances interviews by providing real-time feedback, suggesting questions, offering preparation tips, and improving efficiency and effectiveness.
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
-              <Link href={"/get-started"}><button
-                className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-3 text-lg w-44"
-                
-              >
-                Get Started
-              </button></Link>
-              <Link href="/LearnMore"> {/* Use Link to navigate to the Learn More page */}
-    <button className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg w-44 hover:bg-gray-200">
-      Learn More
-    </button>
-  </Link>
+              {/* Get Started Button */}
+              <Link href="/get-started">
+                <button
+                  className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-3 text-lg w-44"
+                >
+                  Get Started
+                </button>
+              </Link>
+              {/* Learn More Button */}
+              <Link href="/contact"> {/* Use the correct path */}
+                <button className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg w-44 hover:bg-gray-200 transition duration-300">
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
         </section>
