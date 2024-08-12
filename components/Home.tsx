@@ -39,7 +39,7 @@ export default function HomePage() {
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
               {/* Get Started Button */}
-              <Link href="/get-started">
+              <Link href="/interviewcopilot">
                 <button
                   className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-3 text-lg w-44"
                 >

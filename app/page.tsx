@@ -2,7 +2,7 @@ import Header from "@/components/Header"; // Import the Header component
 import HomePage from "@/components/Home";
 import Service from "@/components/Service"; 
 import AiInterview from "@/components/AiInterview"; 
-import AiMockInterview from "@/components/AiMockInterview";
+import AiSkill from "@/components/AiSkill";
 import Blog from "@/components/Blog"; 
 import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
@@ -15,7 +15,7 @@ export default function Home() {
       <HomePage /> 
       <Service />
       <AiInterview />
-      <AiMockInterview />
+      <AiSkill />
       <Blog />
       <Faq />
       <Contact />

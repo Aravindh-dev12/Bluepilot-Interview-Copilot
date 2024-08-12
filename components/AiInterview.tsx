@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'; // Make sure to import Link if you're using Next.js
 
 const AiInterview: React.FC = () => {
   return (
@@ -9,10 +10,11 @@ const AiInterview: React.FC = () => {
           <div className="flex flex-col h-full">
             {/* Heading Section */}
             <div className="p-6">
+              <h1 className="text-4xl md:text-4xl font-extrabold text-black mb-4 font-Informal011 BT">
+                <span className="text-gray-800">“</span>
+              </h1>
               <h1 className="text-4xl md:text-4xl font-extrabold text-black mb-8 font-Informal011 BT">
-                <span className="text-gray-800">
-                  REVOLUTIONIZE INTERVIEWS WITH
-                </span>
+                <span className="text-gray-800">REVOLUTIONIZE INTERVIEWS WITH</span>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md ml-2">
                   AI ASSISTANCE
                 </span>
@@ -22,13 +24,24 @@ const AiInterview: React.FC = () => {
             <div className="flex flex-col justify-end flex-grow p-6">
               <div className="text-1.5xl mb-6">
                 <p className="text-gray-700">
-                  Bluepilot Interview Copilot is a sophisticated web application crafted to assist users in formulating articulate and effective responses during interviews. By integrating cutting-edge <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">real-time audio transcription technology</span> with advanced AI-powered response generation, it offers tailored, precise, and relevant answers, significantly enhancing interview preparation and boosting overall performance through personalized and insightful feedback.
+                  Bluepilot Interview Copilot is an advanced web application designed to help users craft articulate and effective interview responses. 
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md"> It combines real-time audio transcription</span> 
+                  with AI-powered response generation to provide tailored, relevant answers, enhancing interview preparation and boosting performance through personalized feedback.
                 </p>
+              </div>
+              {/* Button Section */}
+              <div className="mt-6">
+                <Link href="/get-started">
+                  <button
+                    className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-3 text-lg w-44"
+                  >
+                    Get Started
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
-
         {/* Image Section */}
         <div className="flex items-center justify-center bg-[#E9EBF2]">
           <img

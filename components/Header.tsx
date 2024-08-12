@@ -41,8 +41,8 @@ const Header = () => {
 
       <nav className="hidden md:flex space-x-12 text-lg">
         <a href="#InterviewCopilot" className="hover:underline">AI Interview Copilot</a>
-        <a href="#about" className="hover:underline">About Us</a>
-        <a href="#work" className="hover:underline">Blog</a>
+        <a href="#about" className="hover:underline">AI Skill Development</a>
+        <a href="#work" className="hover:underline">Question Bank</a>
       </nav>
       <button className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg hover:bg-gray-200">
         Sign up
@@ -58,8 +58,8 @@ const Header = () => {
           </button>
           <nav className="flex flex-col items-start space-y-14 p-6 mt-20">
             <a href="#home" className="text-4xl" onClick={toggleMenu}>AI Interview Copilot</a>
-            <a href="#about" className="text-4xl" onClick={toggleMenu}>About Us</a>
-            <a href="#blog" className="text-4xl" onClick={toggleMenu}>Blog</a>
+            <a href="#about" className="text-4xl" onClick={toggleMenu}>AI Skill Development</a>
+            <a href="#blog" className="text-4xl" onClick={toggleMenu}>Question Bank</a>
           </nav>
         </div>
       )}
