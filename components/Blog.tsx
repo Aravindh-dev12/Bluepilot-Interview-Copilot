@@ -44,7 +44,7 @@ const ServicePage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5] flex flex-col items-center p-8">
+    <div className="min-h-screen bg-[#f5f5f5] flex flex-col items-center p-6">
       <div className="w-full max-w-6xl flex flex-col md:flex-row">
         {/* Hero Section */}
         <section className="md:w-1/3 text-center md:text-left mb-8 md:mb-0 flex flex-col justify-center items-center md:items-start">

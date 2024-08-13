@@ -3,6 +3,8 @@ import HomePage from "@/components/Home";
 import Service from "@/components/Service"; 
 import AiInterview from "@/components/AiInterview"; 
 import AiSkill from "@/components/AiSkill";
+import RealWorld from "@/components/RealWorld";
+import Question from "@/components/Question";
 import Blog from "@/components/Blog"; 
 import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
@@ -16,6 +18,8 @@ export default function Home() {
       <Service />
       <AiInterview />
       <AiSkill />
+      <RealWorld />
+      <Question />
       <Blog />
       <Faq />
       <Contact />
