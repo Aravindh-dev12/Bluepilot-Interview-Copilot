@@ -4,8 +4,6 @@ import { Copilot } from "@/components/copilot";
 import History from "@/components/History";
 import { HistoryData } from "@/lib/types";
 import { useEffect, useRef, useState } from "react";
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import '../app/globals.css'; // Adjust path if necessary
 
 export default function MainPage() {
@@ -44,11 +42,11 @@ export default function MainPage() {
   }, [savedData]);
 
   return (
-    <main className="m-2 overscroll-none">
-      <Header />
+    <main className="min-h-screen bg-gray-100 flex flex-col p-4">
       <Copilot addInSavedData={addInSavedData} />
-      <History data={savedData} deleteData={deleteData} />
-      <Footer />
+      <div className="mt-8">
+        <History data={savedData} deleteData={deleteData} />
+      </div>
     </main>
   );
 }
