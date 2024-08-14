@@ -77,46 +77,95 @@ const QuestionGenerator: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
               {/* Feature 1 */}
               <div className="flex flex-col items-center p-8 w-full md:w-[300px] min-h-[350px]">
-              <div className="rounded-full p-4 mb-4">
-                <img src="/question.png" alt="Tailored Preparation" className="h-16 w-16" />
+                <div className="rounded-full p-4 mb-4">
+                  <img src="/question.png" alt="Tailored Preparation" className="h-16 w-16" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                  Tailored Questions
+                </h3>
+                <p className="text-gray-500 text-center">
+                  Generate specific, high-quality interview questions tailored to your company, industry trends, and candidate profiles.
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-              Tailored Questions
-              </h3>
-              <p className="text-gray-500 text-center">
-              Generate specific, high-quality interview questions tailored to your company, industry trends, and candidate profiles.
-              </p>
-            </div>
 
               {/* Feature 2 */}
               <div className="flex flex-col items-center p-8 w-full md:w-[300px] min-h-[350px]">
-              <div className="rounded-full p-4 mb-4">
-                <img src="/challenging.png" alt="Tailored Preparation" className="h-16 w-16" />
+                <div className="rounded-full p-4 mb-4">
+                  <img src="/challenging.png" alt="Insightful and Challenging" className="h-16 w-16" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                  Insightful and Challenging
+                </h3>
+                <p className="text-gray-500 text-center">
+                  Receive insightful and challenging questions to elevate your interview process and assess candidates effectively.
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-              Insightful and Challenging
-              </h3>
-              <p className="text-gray-500 text-center">
-              Receive insightful and challenging questions to elevate your interview process and assess candidates effectively.
-              </p>
-            </div>
 
               {/* Feature 3 */}
               <div className="flex flex-col items-center p-8 w-full md:w-[300px] min-h-[350px]">
-              <div className="rounded-full p-4 mb-4">
-                <img src="/precision.png" alt="Tailored Preparation" className="h-16 w-16" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-              AI-Powered Precision
-              </h3>
-              <p className="text-gray-500 text-center">
-              Leverage the power of AI to generate precise and relevant questions based on current industry trends and company specifics.
-              </p>
-            </div>
+                <div className="rounded-full p-4 mb-4">
+                  <img src="/precision.png" alt="AI-Powered Precision" className="h-16 w-16" />
                 </div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                  AI-Powered Precision
+                </h3>
+                <p className="text-gray-500 text-center">
+                  Leverage the power of AI to generate precise and relevant questions based on current industry trends and company specifics.
+                </p>
               </div>
-            </section>
-            
+            </div>
+          </div>
+        </section>
+
+        {/* Support Software Section */}
+        <section className="mb-12">
+    <div className="bg-[#F0EBFF] py-6 px-4 rounded-lg">
+        <h2 className="text-center font-bold text-2xl mb-8">Prepare for All Major Companies</h2>
+        <div className="max-w-6xl mx-auto space-y-6">
+            {/* Row 1 */}
+            <div className="flex justify-center items-center space-x-8">
+                <img src="/zoho.png" alt="Zoho" className="h-12 w-auto" />
+                <img src="/barclays.png" alt="Barclays" className="h-12 w-auto" />
+                <img src="/atlassian.png" alt="Atlassian" className="h-12 w-auto" />
+                <img src="/salesforce.png" alt="Salesforce" className="h-12 w-auto" />
+                <img src="/jio.png" alt="Jio" className="h-12 w-auto" />
+                <img src="/hexaware.png" alt="Hexaware" className="h-12 w-auto" />
+                <img src="/dxc.png" alt="DXC Technology" className="h-12 w-auto" />
+            </div>
+            {/* Row 2 */}
+            <div className="flex justify-center items-center space-x-8">
+                <img src="/american_express.png" alt="American Express" className="h-12 w-auto" />
+                <img src="/jpmorgan.png" alt="JP Morgan" className="h-12 w-auto" />
+                <img src="/bosch.png" alt="Bosch" className="h-12 w-auto" />
+                <img src="/zs.png" alt="ZS Associates" className="h-12 w-auto" />
+                <img src="/ntt_data.png" alt="NTT Data" className="h-12 w-auto" />
+                <img src="/mphasis.png" alt="Mphasis" className="h-12 w-auto" />
+                <img src="/nagarro.png" alt="Nagarro" className="h-12 w-auto" />
+            </div>
+            {/* Row 3 */}
+            <div className="flex justify-center items-center space-x-8">
+                <img src="/sapient.png" alt="Sapient" className="h-12 w-auto" />
+                <img src="/flipkart.png" alt="Flipkart" className="h-12 w-auto" />
+                <img src="/cisco.png" alt="Cisco" className="h-12 w-auto" />
+                <img src="/juspay.png" alt="Juspay" className="h-12 w-auto" />
+                <img src="/mu_sigma.png" alt="Mu Sigma" className="h-12 w-auto" />
+                <img src="/hcl.png" alt="HCL" className="h-12 w-auto" />
+                <img src="/lnt_infotech.png" alt="L&T Infotech" className="h-12 w-auto" />
+            </div>
+            {/* Row 4 */}
+            <div className="flex justify-center items-center space-x-8">
+                <img src="/capgemini.png" alt="Capgemini" className="h-12 w-auto" />
+                <img src="/wipro.png" alt="Wipro" className="h-12 w-auto" />
+                <img src="/tcs.png" alt="TCS" className="h-12 w-auto" />
+                <img src="/amazon.png" alt="Amazon" className="h-12 w-auto" />
+                <img src="/adobe.png" alt="Adobe" className="h-12 w-auto" />
+                <img src="/tech_mahindra.png" alt="Tech Mahindra" className="h-12 w-auto" />
+                <img src="/accenture.png" alt="Accenture" className="h-12 w-auto" />
+            </div>
+        </div>
+    </div>
+</section>
+
 
         {/* Question Generation Section */}
         <section>
@@ -165,7 +214,7 @@ const QuestionGenerator: React.FC = () => {
                 <h2 className="text-xl font-semibold">Generated Questions:</h2>
                 <ul className="list-disc pl-5 mt-2">
                   {questions.map((question, index) => (
-                    <li key={index} className="text-gray-700">{question}</li>
+                    <li key={index} className="text-gray-800">{question}</li>
                   ))}
                 </ul>
               </div>

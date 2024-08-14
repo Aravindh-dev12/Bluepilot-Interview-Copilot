@@ -4,6 +4,9 @@ import { Copilot } from "@/components/copilot";
 import History from "@/components/History";
 import { HistoryData } from "@/lib/types";
 import { useEffect, useRef, useState } from "react";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import '../app/globals.css'; // Adjust path if necessary
 
 export default function MainPage() {
   const isRendered = useRef(false);
@@ -22,22 +25,30 @@ export default function MainPage() {
   useEffect(() => {
     if (isRendered.current) return;
     isRendered.current = true;
-    const savedData = localStorage.getItem("savedData");
-    if (savedData) {
-      setSavedData(JSON.parse(savedData) as HistoryData[]);
+    try {
+      const savedData = localStorage.getItem("savedData");
+      if (savedData) {
+        setSavedData(JSON.parse(savedData) as HistoryData[]);
+      }
+    } catch (error) {
+      console.error("Failed to parse saved data from localStorage", error);
     }
   }, []);
 
   useEffect(() => {
-    if (savedData) {
+    try {
       localStorage.setItem("savedData", JSON.stringify(savedData));
+    } catch (error) {
+      console.error("Failed to save data to localStorage", error);
     }
   }, [savedData]);
 
   return (
     <main className="m-2 overscroll-none">
+      <Header />
       <Copilot addInSavedData={addInSavedData} />
       <History data={savedData} deleteData={deleteData} />
+      <Footer />
     </main>
   );
 }
