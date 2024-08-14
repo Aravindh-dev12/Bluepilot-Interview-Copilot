@@ -38,12 +38,10 @@ const Header = () => {
           </svg>
         </button>
       </div>
-
-      <nav className="hidden md:flex space-x-12 text-lg">
+      <nav className="hidden md:flex space-x-16 text-lg">
         <a href="#interviewcopilot" className="hover:underline">AI Interview Copilot</a>
         <a href="#Ai skill development" className="hover:underline">AI Skill Development</a>
-        <a href="#realworld" className="hover:underline"> Interactive Real-World Scenarios</a>
-        <a href="#work" className="hover:underline">Question Bank</a>
+        <a href="#realworld" className="hover:underline">AI Contextual Questions</a>
       </nav>
       <button className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg hover:bg-gray-200">
         Sign up
@@ -58,10 +56,9 @@ const Header = () => {
             &times;
           </button>
           <nav className="flex flex-col items-start space-y-14 p-6 mt-20">
-            <a href="#interviewcopilot" className="text-4xl" onClick={toggleMenu}>AI Interview Copilot</a>
-            <a href="#about" className="text-4xl" onClick={toggleMenu}>AI Skill Development</a>
-            <a href="#realworld" className="hover:underline"> Interactive Real-World Scenarios</a>
-            <a href="#blog" className="text-4xl" onClick={toggleMenu}>Question Bank</a>
+            <a href="#interviewcopilot" className="text-3xl" onClick={toggleMenu}>AI Interview Copilot</a>
+            <a href="#about" className="text-3xl" onClick={toggleMenu}>AI Skill Development</a>
+            <a href="#about" className="text-3xl" onClick={toggleMenu}>AI Contextual Questions</a>
           </nav>
         </div>
       )}

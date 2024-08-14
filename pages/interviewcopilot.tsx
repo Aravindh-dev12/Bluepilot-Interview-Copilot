@@ -3,16 +3,18 @@ import Footer from "../components/Footer";
 import Link from "next/link";
 import '../app/globals.css';
 
+
 const interviewcopilot = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#f5f5f5] to-white">
       <Header />
       <main className="flex-grow container mx-auto text-center py-20">
         {/* Heading */}
-        <h1 className="text-5xl font-bold text-gray-800 mb-4">
-        ACTIVE AI SUPPORT
+        <h1 className="text-3xl font-semibold mb-10">
+         AI-POWERED SOLUTIONS FOR
+              <span className="bg-gradient-to-r from-[#4895ef] to-[#c77dff] bg-clip-text text-transparent"> IMMEDIATE SUPPORT </span>
         </h1>
-        <p className="text-2xl mb-12 bg-gradient-to-r from-[#4895ef] to-[#c77dff] bg-clip-text text-transparent">
+        <p className="text-2xl mb-12 bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent">
             Bluepilot delivering actionable insights instantly
         </p>
 
