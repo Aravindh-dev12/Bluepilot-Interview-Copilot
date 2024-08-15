@@ -10,10 +10,12 @@ const SkillMappingPage: React.FC = () => {
       <Header />
 
       {/* Hero Section */}
-      <section id="hero" className="text-white py-16">
+      <section id="hero" className="text-black py-16">
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-extrabold mb-4">Unlock Your Full Potential</h2>
-          <p className="text-lg mb-8">Personalized AI-driven skill development tailored to your goals</p>
+           <h2 className="text-4xl md:text-4xl font-bold mb-4 text-gray-800">
+              UNLOCK YOUR FULL POTENTIAL
+            </h2>
+            <p className="text-2xl mb-12 bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent">Personalized AI-driven skill development <span className="bg-gradient-to-r from-[#4895ef] to-[#c77dff] bg-clip-text text-transparent"> tailored to your goals</span></p>
           <Link href="/assessment">
             <button
               className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-6 text-lg w-64"

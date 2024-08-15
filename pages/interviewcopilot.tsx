@@ -10,18 +10,11 @@ const interviewcopilot = () => {
       <Header />
       <main className="flex-grow container mx-auto text-center py-20">
         {/* Heading */}
-        <h1 className="text-3xl font-semibold mb-10">
-         AI-POWERED SOLUTIONS FOR
-              <span className="bg-gradient-to-r from-[#4895ef] to-[#c77dff] bg-clip-text text-transparent"> IMMEDIATE SUPPORT </span>
-        </h1>
-        <p className="text-2xl mb-12 bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent">
-            Bluepilot delivering actionable insights instantly
-        </p>
-
-        {/* Features Section */}
-        <h2 className="text-3xl font-semibold mb-10">
-          Features Of <span className="bg-gradient-to-r from-[#4895ef] to-[#c77dff] bg-clip-text text-transparent">Bluepilot</span>
+        <h2 className="text-4xl md:text-4xl font-bold mb-4 text-gray-800">
+         AI-POWERED SOLUTIONS FOR IMMEDIATE SUPPORT
         </h2>
+        <p className="text-2xl mb-12 bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent">
+            Bluepilot delivering actionable <span className="bg-gradient-to-r from-[#4895ef] to-[#c77dff] bg-clip-text text-transparent"> insights instantly </span></p>
         <div className="flex justify-center">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
         {/* Feature 1 */}
@@ -67,7 +60,7 @@ const interviewcopilot = () => {
       </div>
         {/* Benefits Section */}
         <h2 className="text-3xl font-semibold mb-10">
-          Why Choose <span className="bg-gradient-to-r from-[#4895ef] to-[#c77dff] bg-clip-text text-transparent">Bluepilot ?</span>
+          Why Choose Bluepilot ?
         </h2>
 
         <div className="max-w-4xl mx-auto mb-20">
