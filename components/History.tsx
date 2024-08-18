@@ -1,7 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { ContentData } from "./ui/content";
+import { Button } from "@/components/ui/button";
 import { HistoryData } from "@/lib/types";
 
 interface HistoryProps {
@@ -9,30 +9,31 @@ interface HistoryProps {
   deleteData: (createdAt: string) => void;
 }
 
-export default function History({ data: savedData, deleteData }: HistoryProps) {
+export default function History({ data, deleteData }: HistoryProps) {
   return (
-    <div className="flex flex-col w-full">
-      <main className="overflow-auto p-4 space-y-4">
-        {savedData &&
-          savedData?.map((data, index) => (
-            <Card key={index} className="p-4 bg-green-100">
-              <div className="flex mt-2 text-xs">
-                {data.tag} • {data.createdAt} •{" "}
-                <button
-                  className="text-xs text-red-500 hover:text-red-800 underline"
-                  onClick={() => {
-                    deleteData(data.createdAt);
-                  }}
+    <section className="bg-white p-6 rounded-lg shadow-md border border-gray-300">
+      <h2 className="text-3xl font-bold text-gray-800 mb-4">History</h2>
+      <div className="space-y-4">
+        {data.length === 0 ? (
+          <p className="text-gray-600">No records found.</p>
+        ) : (
+          data.map((item) => (
+            <Card key={item.createdAt} className="p-4 shadow-lg border rounded-lg bg-white">
+              <div className="flex justify-between items-start">
+                <div className="text-lg font-semibold text-gray-900">{item.tag}</div>
+                <Button
+                  variant="outline"
+                  className="text-red-600 hover:bg-red-100"
+                  onClick={() => deleteData(item.createdAt)}
                 >
                   Delete
-                </button>
+                </Button>
               </div>
-              <ContentData className="mt-2 text-sm" contentMaxLength={100}>
-                {data.data}
-              </ContentData>
+              <p className="mt-2 text-gray-700">{item.data}</p>
             </Card>
-          ))}
-      </main>
-    </div>
+          ))
+        )}
+      </div>
+    </section>
   );
 }

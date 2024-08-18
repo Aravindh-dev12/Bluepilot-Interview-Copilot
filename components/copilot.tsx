@@ -5,7 +5,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import RecorderTranscriber from "@/components/recorder";
 import { useCallback, useEffect, useRef, useState } from "react";
-
 import { useCompletion } from "ai/react";
 import { FLAGS, HistoryData } from "@/lib/types";
 import { Switch } from "@/components/ui/switch";
@@ -13,10 +12,12 @@ import { Switch } from "@/components/ui/switch";
 interface CopilotProps {
   addInSavedData: (data: HistoryData) => void;
 }
+
 export function Copilot({ addInSavedData }: CopilotProps) {
   const [transcribedText, setTranscribedText] = useState<string>("");
   const [flag, setFlag] = useState<FLAGS>(FLAGS.COPILOT);
   const [bg, setBg] = useState<string>("");
+  const [isPaused, setIsPaused] = useState<boolean>(false);
 
   const { completion, stop, isLoading, error, setInput, handleSubmit } =
     useCompletion({
@@ -28,11 +29,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
     });
 
   const handleFlag = useCallback((checked: boolean) => {
-    if (!checked) {
-      setFlag(FLAGS.SUMMERIZER);
-    } else {
-      setFlag(FLAGS.COPILOT);
-    }
+    setFlag(checked ? FLAGS.COPILOT : FLAGS.SUMMERIZER);
   }, []);
 
   const formRef = useRef<HTMLFormElement>(null);
@@ -42,11 +39,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
         case "Enter":
           event.preventDefault();
           if (formRef.current) {
-            const submitEvent = new Event("submit", {
-              cancelable: true,
-              bubbles: true,
-            });
-            formRef.current.dispatchEvent(submitEvent);
+            formRef.current.requestSubmit();
           }
           break;
         case "s":
@@ -72,6 +65,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
     setInput((prev) => prev + " " + text);
     setTranscribedText((prev) => prev + " " + text);
   };
+
   const handleTranscriptionChange = (
     e: React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
@@ -91,11 +85,10 @@ export function Copilot({ addInSavedData }: CopilotProps) {
     }
   }, []);
 
-  useEffect(() => console.log(flag), [flag]);
-
   useEffect(() => {
-    if (!bg) return;
-    localStorage.setItem("bg", bg);
+    if (bg) {
+      localStorage.setItem("bg", bg);
+    }
   }, [bg]);
 
   const handleSave = () => {
@@ -106,100 +99,138 @@ export function Copilot({ addInSavedData }: CopilotProps) {
     });
   };
 
+  const handlePause = () => {
+    setIsPaused((prev) => !prev);
+    // Handle pause logic here, e.g., stop recording
+  };
+
+  const handleFinish = () => {
+    // Show feedback pop-up
+    const isFeedbackSubmitted = confirm("Please provide your feedback.");
+
+    if (isFeedbackSubmitted) {
+      // After feedback is submitted, redirect to home page
+      window.location.href = "/";
+    }
+  };
+
   return (
-    <div className="grid w-full gap-4 mt-12">
-      <h2 className="text-3xl underline text-green-700">
-        Bluepilot Interview Copilot
-      </h2>
+    <div className="bg-white p-8 rounded-lg shadow-2xl border border-gray-300 relative">
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-3xl font-bold text-gray-800">
+          Bluepilot
+        </h2>
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 text-sm">
+            <Label className="text-green-800 font-semibold">
+              Summerizer
+              <span className="text-xs p-1">(Ctrl + s)</span>
+            </Label>
+            <Switch
+              className="data-[state=checked]:bg-green-600 data-[state=unchecked]:bg-gray-200"
+              onCheckedChange={handleFlag}
+              checked={flag === FLAGS.COPILOT}
+            />
+            <Label className="text-green-800 font-semibold">
+              Copilot
+              <span className="text-xs p-1">(Ctrl + c)</span>
+            </Label>
+          </div>
+          <div className="flex space-x-4">
+            <Button
+              className="bg-gray-200 hover:bg-gray-200 text-black"
+              onClick={handlePause}
+            >
+              {isPaused ? "Resume" : "Pause"}
+            </Button>
+            <Button
+              className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right"
+              onClick={handleFinish}
+            >
+              Finish
+            </Button>
+          </div>
+        </div>
+      </div>
+
       {error && (
-        <div className="fixed top-0 left-0 w-full p-4 text-center text-xs bg-red-500 text-white">
+        <div className="p-4 mb-4 text-center text-sm bg-red-600 text-white rounded-lg">
           {error.message}
         </div>
       )}
-      <div className="grid gap-4 md:grid-cols-2">
-        <div className="grid gap-1.5">
-          <Label htmlFor="system_prompt" className="text-green-800">
+
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="bg-gray-50 p-4 rounded-lg shadow-md border border-gray-200 flex flex-col w-full h-[500px] relative">
+          <Label htmlFor="system_prompt" className="text-green-800 font-semibold text-lg">
             Interview Background
           </Label>
           <Textarea
             id="system_prompt"
             placeholder="Type or paste your text here."
-            className="resize-none h-[50px] overflow-hidden"
-            style={{ lineHeight: "1.5", maxHeight: "150px" }}
+            className="resize-none mt-8 p-4 border rounded-lg shadow-sm h-full"
             value={bg}
             onChange={(e) => setBg(e.target.value)}
           />
           <RecorderTranscriber
             addTextinTranscription={addTextinTranscription}
+            className="mt-4"
+            isPaused={isPaused}
           />
         </div>
 
-        <div className="grid gap-1.5 my-2">
-          <Label htmlFor="transcription" className="text-green-800">
-            Transcription{" "}
+        <div className="bg-gray-50 p-4 rounded-lg shadow-md border border-gray-200 flex flex-col w-full h-[500px] relative">
+          <Label htmlFor="transcription" className="text-green-800 font-semibold text-lg">
+            Transcription
             <button
               type="button"
-              className="text-xs text-red-500 hover:text-red-800 underline"
+              className="absolute right-4 top-4 text-sm text-red-500 hover:text-red-700 underline"
               onClick={clearTranscriptionChange}
             >
-              clear
+              Clear
             </button>
           </Label>
           <Textarea
             id="transcription"
-            className="h-[100px] min-h-[100px] mt-2"
+            className="mt-8 p-4 border rounded-lg shadow-sm h-full"
             placeholder="Your transcribed text will appear here."
             value={transcribedText}
             onChange={handleTranscriptionChange}
           />
         </div>
       </div>
-      <div>
+
+      <div className="flex justify-center mt-8">
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="grid md:grid-cols-2 gap-2"
+          className="w-full max-w-lg flex justify-center"
         >
-          <div className="flex items-center justify-center w-full border">
-            <Label className="text-green-800  transition-opacity duration-300">
-              Summerizer
-              <span className="opacity-85 text-xs p-2"> (Ctrl + s)</span>
-            </Label>
-            <Switch
-              className="data-[state=checked]:bg-green-600 data-[state=unchecked]:bg-gray-200 m-2"
-              onCheckedChange={handleFlag}
-              defaultChecked
-              checked={flag === FLAGS.COPILOT}
-            />
-            <Label className="text-green-800  transition-opacity duration-300">
-              Copilot<span className="opacity-85 text-xs p-2"> (Ctrl + c)</span>
-            </Label>
-          </div>
-
           <Button
-            className="h-9 w-full bg-green-600 hover:bg-green-800 text-white transition-opacity duration-300"
-            size="sm"
-            variant="outline"
+            className="w-60 h-12 bg-btn-grad text-bold text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right"
+            size="lg"
+            variant="solid"
             disabled={isLoading}
             type="submit"
           >
             Process
-            <span className="opacity-85 text-xs p-2"> (Ctrl + Enter)</span>
+            <span className="text-sm p-2">(Ctrl + Enter)</span>
           </Button>
         </form>
       </div>
 
-      <div className="mx-2 md:mx-10 mt-4 mb-8">
+      <div className="mt-6">
         {completion && (
           <button
             type="button"
-            className="text-xs text-green-500 hover:text-green-800 underline"
+            className="text-xs text-green-500 hover:text-green-700 underline"
             onClick={handleSave}
           >
-            save
+            Save
           </button>
         )}
-        <div className="flex whitespace-pre-wrap">{completion}</div>
+        <div className="mt-2 text-base text-gray-800 whitespace-pre-wrap">
+          {completion}
+        </div>
       </div>
     </div>
   );
