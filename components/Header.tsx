@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,16 +13,16 @@ const Header = () => {
 
   return (
     <header className="flex justify-between items-center p-6 border-b border-gray-300 bg-gray-50 relative">
-      {/* Wrap "BluePilot" in an <a> tag to link to the home page */}
-      <a href="/" className="text-2xl font-bold font-itc-bauhaus">
+      {/* Wrap "BluePilot" in a <Link> component */}
+      <Link href="/" className="text-2xl font-bold font-itc-bauhaus">
         BluePilot
-      </a>
+      </Link>
 
       {/* Sign up button for small screens */}
       <div className="md:hidden flex items-center space-x-2">
-        <button className="px-4 py-2 border-2 border-gray-800 rounded-full text-lg hover:bg-gray-200">
+        <Link href="/signup" className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-2 text-lg">
           Sign up
-        </button>
+        </Link>
         <button onClick={toggleMenu} className="focus:outline-none">
           <svg
             className="w-6 h-6"
@@ -41,13 +43,15 @@ const Header = () => {
 
       {/* Desktop navigation */}
       <nav className="hidden md:flex space-x-16 text-lg">
-        <a href="#interviewcopilot" className="hover:underline">AI Interview Copilot</a>
-        <a href="#skilldevelopment" className="hover:underline">AI Skill Development</a>
-        <a href="#aiquestions" className="hover:underline">AI Contextual Questions</a>
+        <Link href="#interviewcopilot" className="hover:underline">AI Interview Copilot</Link>
+        <Link href="#skilldevelopment" className="hover:underline">AI Skill Development</Link>
+        <Link href="#aiquestions" className="hover:underline">AI Contextual Questions</Link>
       </nav>
-      <button className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg hover:bg-gray-200">
+
+      {/* Sign up button for desktop */}
+      <Link href="/signup" className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg hover:bg-gray-200">
         Sign up
-      </button>
+      </Link>
 
       {/* Mobile menu */}
       {menuOpen && (
@@ -59,9 +63,9 @@ const Header = () => {
             &times;
           </button>
           <nav className="flex flex-col items-start space-y-6 p-6 mt-20">
-            <a href="#interviewcopilot" className="text-2xl" onClick={toggleMenu}>AI Interview Copilot</a>
-            <a href="#skilldevelopment" className="text-2xl" onClick={toggleMenu}>AI Skill Development</a>
-            <a href="#aiquestions" className="text-2xl" onClick={toggleMenu}>AI Contextual Questions</a>
+            <Link href="#interviewcopilot" className="text-2xl" onClick={toggleMenu}>AI Interview Copilot</Link>
+            <Link href="#skilldevelopment" className="text-2xl" onClick={toggleMenu}>AI Skill Development</Link>
+            <Link href="#aiquestions" className="text-2xl" onClick={toggleMenu}>AI Contextual Questions</Link>
           </nav>
         </div>
       )}
