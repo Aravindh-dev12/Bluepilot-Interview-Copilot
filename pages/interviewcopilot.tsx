@@ -156,7 +156,7 @@ const interviewcopilot = () => {
                   className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-6 text-lg w-64"
                 >
                   Get Started
-            </button>
+          </button>
           </Link>
         </div>
       </main>
