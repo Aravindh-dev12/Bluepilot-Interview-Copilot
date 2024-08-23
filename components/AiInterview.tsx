@@ -3,9 +3,21 @@ import Link from 'next/link'; // Ensure this is imported if you're using Next.js
 
 const AiInterview: React.FC = () => {
   return (
-    <div className="h-auto flex items-center justify-center py-8 bg-[#F5F5F5]">
+    <div className="h-auto flex flex-col items-center justify-center py-8 bg-[#F5F5F5]">
+      {/* Page Heading */}
+      <div className="w-full text-center mb-12">
+        <h1 className="text-2xl md:text-4xl font-extrabold text-black">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">
+        ELEVATE YOUR TALENT
+            </span>
+            <span className="text-gray-800 ml-2">
+            STRATEGY WITH ADVANCED AI CAPABILITIES
+            </span>
+        </h1>
+      </div>
+
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-16 mt-12"> {/* Added mt-12 for top margin */}
-        {/* Text Section */}
+        
         <div className="w-full mx-auto bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
           <div className="flex flex-col">
             {/* Heading Section */}

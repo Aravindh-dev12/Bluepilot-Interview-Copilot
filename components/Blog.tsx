@@ -38,8 +38,8 @@ const ServicePage: React.FC = () => {
       summary: "Explore how AI-powered technology is used to generate optimal responses for interview questions, enhancing performance."
     },
     {
-      title: "Mastering Interview Responses: Tips and Tricks with Bluepilot Interview Copilot",
-      summary: "Get practical tips and tricks for mastering interview responses using the Bluepilot Interview Copilot tools and features."
+      title: "AI Skill Development: Mastering the Future of Work",
+      summary: "Explore essential skills for AI development and how to prepare for a career in this rapidly evolving field"
     },
   ];
 

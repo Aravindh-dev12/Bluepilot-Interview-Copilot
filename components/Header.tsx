@@ -43,9 +43,9 @@ const Header = () => {
 
       {/* Desktop navigation */}
       <nav className="hidden md:flex space-x-16 text-lg">
-        <Link href="#interviewcopilot" className="hover:underline">AI Interview Copilot</Link>
-        <Link href="#skilldevelopment" className="hover:underline">AI Skill Development</Link>
-        <Link href="#aiquestions" className="hover:underline">AI Contextual Questions</Link>
+        <Link href="/interviewcopilot" className="hover:underline">AI Interview Copilot</Link>
+        <Link href="/skilldevelopment" className="hover:underline">AI Skill Development</Link>
+        <Link href="/aiquestions" className="hover:underline">AI Contextual Questions</Link>
       </nav>
 
       {/* Sign up button for desktop */}
@@ -63,9 +63,9 @@ const Header = () => {
             &times;
           </button>
           <nav className="flex flex-col items-start space-y-6 p-6 mt-20">
-            <Link href="#interviewcopilot" className="text-2xl" onClick={toggleMenu}>AI Interview Copilot</Link>
-            <Link href="#skilldevelopment" className="text-2xl" onClick={toggleMenu}>AI Skill Development</Link>
-            <Link href="#aiquestions" className="text-2xl" onClick={toggleMenu}>AI Contextual Questions</Link>
+            <Link href="/interviewcopilot" className="text-2xl" onClick={toggleMenu}>AI Interview Copilot</Link>
+            <Link href="/skilldevelopment" className="text-2xl" onClick={toggleMenu}>AI Skill Development</Link>
+            <Link href="/aiquestions" className="text-2xl" onClick={toggleMenu}>AI Contextual Questions</Link>
           </nav>
         </div>
       )}
