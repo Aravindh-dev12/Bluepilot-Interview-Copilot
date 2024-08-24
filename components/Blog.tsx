@@ -41,6 +41,10 @@ const ServicePage: React.FC = () => {
       title: "AI Skill Development: Mastering the Future of Work",
       summary: "Explore essential skills for AI development and how to prepare for a career in this rapidly evolving field"
     },
+    {
+      title: "Top AI Interview Questions and How to Prepare for Them",
+      summary: "Explore essential skills for AI development and how to prepare for a career in this rapidly evolving field"
+    },
   ];
 
   return (

@@ -33,14 +33,13 @@ export function Copilot({ addInSavedData }: CopilotProps) {
   }, []);
 
   const formRef = useRef<HTMLFormElement>(null);
+
   const handleKeyDown = useCallback((event: KeyboardEvent) => {
     if (event.ctrlKey) {
       switch (event.key) {
         case "Enter":
           event.preventDefault();
-          if (formRef.current) {
-            formRef.current.requestSubmit();
-          }
+          formRef.current?.requestSubmit();
           break;
         case "s":
           event.preventDefault();
@@ -78,19 +77,6 @@ export function Copilot({ addInSavedData }: CopilotProps) {
     setTranscribedText("");
   };
 
-  useEffect(() => {
-    const savedBg = localStorage.getItem("bg");
-    if (savedBg) {
-      setBg(savedBg);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (bg) {
-      localStorage.setItem("bg", bg);
-    }
-  }, [bg]);
-
   const handleSave = () => {
     addInSavedData({
       createdAt: new Date().toISOString(),
@@ -110,7 +96,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
 
     if (isFeedbackSubmitted) {
       // After feedback is submitted, redirect to home page
-      window.location.href = "/";
+      window.location.assign("/");
     }
   };
 
@@ -122,7 +108,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
         </h2>
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2 text-sm">
-            <Label className="text-green-800 font-semibold">
+            <Label className="text-black-800 font-semibold">
               Summerizer
               <span className="text-xs p-1">(Ctrl + s)</span>
             </Label>
@@ -131,7 +117,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
               onCheckedChange={handleFlag}
               checked={flag === FLAGS.COPILOT}
             />
-            <Label className="text-green-800 font-semibold">
+            <Label className="text-black-800 font-semibold">
               Copilot
               <span className="text-xs p-1">(Ctrl + c)</span>
             </Label>
@@ -161,7 +147,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
 
       <div className="grid gap-6 md:grid-cols-2">
         <div className="bg-gray-50 p-4 rounded-lg shadow-md border border-gray-200 flex flex-col w-full h-[500px] relative">
-          <Label htmlFor="system_prompt" className="text-green-800 font-semibold text-lg">
+          <Label htmlFor="system_prompt" className="text-gray-800 font-semibold text-lg">
             Interview Background
           </Label>
           <Textarea
@@ -179,7 +165,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
         </div>
 
         <div className="bg-gray-50 p-4 rounded-lg shadow-md border border-gray-200 flex flex-col w-full h-[500px] relative">
-          <Label htmlFor="transcription" className="text-green-800 font-semibold text-lg">
+          <Label htmlFor="transcription" className="text-gray-800 font-semibold text-lg">
             Transcription
             <button
               type="button"
