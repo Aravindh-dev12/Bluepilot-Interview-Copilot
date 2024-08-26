@@ -130,7 +130,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
               {isPaused ? "Resume" : "Pause"}
             </Button>
             <Button
-              className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right"
+              className="bg-btn-grad text-black bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right"
               onClick={handleFinish}
             >
               Finish
@@ -192,7 +192,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
           className="w-full max-w-lg flex justify-center"
         >
           <Button
-            className="w-60 h-12 bg-btn-grad text-bold text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right"
+            className="w-60 h-12 bg-btn-grad text-bold text-black bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right"
             size="lg"
             variant="solid"
             disabled={isLoading}

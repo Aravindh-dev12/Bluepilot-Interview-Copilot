@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -45,7 +44,12 @@ const Header = () => {
       <nav className="hidden md:flex space-x-16 text-lg">
         <Link href="/interviewcopilot" className="hover:underline">AI Interview Copilot</Link>
         <Link href="/skilldevelopment" className="hover:underline">AI Skill Development</Link>
-        <Link href="/aiquestions" className="hover:underline">AI Contextual Questions</Link>
+        <Link href="/JobApplicationTailor" className="hover:underline flex items-center">
+          AI Application Optimizer
+          <span className="ml-2 bg-yellow-300 text-xs text-gray-800 px-2 py-1 rounded-full">
+            Beta
+          </span>
+        </Link>
       </nav>
 
       {/* Sign up button for desktop */}
@@ -65,7 +69,12 @@ const Header = () => {
           <nav className="flex flex-col items-start space-y-6 p-6 mt-20">
             <Link href="/interviewcopilot" className="text-2xl" onClick={toggleMenu}>AI Interview Copilot</Link>
             <Link href="/skilldevelopment" className="text-2xl" onClick={toggleMenu}>AI Skill Development</Link>
-            <Link href="/aiquestions" className="text-2xl" onClick={toggleMenu}>AI Contextual Questions</Link>
+            <Link href="/JobApplicationTailor" className="text-2xl flex items-center" onClick={toggleMenu}>
+              AI Application Optimizer
+              <span className="ml-2 bg-yellow-300 text-xs text-gray-800 px-2 py-1 rounded-full">
+                Beta
+              </span>
+            </Link>
           </nav>
         </div>
       )}

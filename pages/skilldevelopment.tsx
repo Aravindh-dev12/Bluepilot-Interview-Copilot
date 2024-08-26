@@ -89,7 +89,7 @@ const SkillAssessmentPage: React.FC = () => {
               <div className="flex justify-center mt-8">
                 <button
                   type="submit"
-                  className="bg-btn-grad text-white px-4 py-6 text-lg w-64 rounded-full font-semibold bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full"
+                  className="bg-btn-grad text-black px-4 py-6 text-lg w-64 rounded-full bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full"
                   disabled={loading}
                 >
                   {loading ? 'Generating Content...' : 'Analyze'}

@@ -14,9 +14,9 @@ const AiInterview: React.FC = () => {
                 <span className="text-gray-800">“</span>
               </h1>
               <h1 className="text-3xl md:text-3xl font-extrabold text-black mb-8">
-                <span className="text-gray-800">PRACTICAL SITUATIONS FOR </span>
+                <span className="text-gray-800">REAL-WORLD SCENARIOS FOR </span>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] ml-2">
-                SMART INTERVIEW INSIGHT
+                TAILORING AI JOB APPLICATION
                 </span>
               </h1>
             </div>
@@ -24,14 +24,14 @@ const AiInterview: React.FC = () => {
             <div className="flex flex-col justify-end flex-grow p-6">
               <div className="text-lg md:text-xl mb-6">
               <p className="text-gray-700">
-                Generates tailored interview questions reflecting <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff]">current company projects, industry trends, and the candidate's profile</span>, ensuring each question is relevant and appropriately challenging.
+              Practical Insights and Strategies for <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff]"> Tailoring AI job applications to stand out and succeed in a competitive job market </span>maximizing your chances for success and growth
               </p>
               </div>
               {/* Button Section */}
               <div className="mt-6">
-                <Link href="/aiquestions">
+                <Link href="/JobApplicationTailor">
                 <button
-                  className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-3 text-lg w-56 sm:w-40"
+                  className="bg-btn-grad text-black bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-3 text-lg w-56 sm:w-40"
                 >
                   Get Started
                 </button>

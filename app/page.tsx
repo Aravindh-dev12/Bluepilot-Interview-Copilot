@@ -3,7 +3,7 @@ import HomePage from "@/components/Home";
 import Service from "@/components/Service"; 
 import AiInterview from "@/components/AiInterview"; 
 import AiSkill from "@/components/AiSkill";
-import Questions from "@/components/Questions";
+import Application from "@/components/Application";
 import Blog from "@/components/Blog"; 
 import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
@@ -17,7 +17,7 @@ export default function Home() {
       <Service />
       <AiInterview />
       <AiSkill />
-      <Questions />
+      <Application />
       <Blog />
       <Faq />
       <Contact />

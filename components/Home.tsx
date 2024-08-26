@@ -41,7 +41,7 @@ export default function HomePage() {
               {/* Get Started Button */}
               <Link href="/interviewcopilot">
                 <button
-                  className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-3 text-lg w-44"
+                  className="bg-btn-grad text-black bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-3 text-lg w-44"
                 >
                   Get Started
                 </button>
