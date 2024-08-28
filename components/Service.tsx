@@ -7,7 +7,6 @@ const ServicePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#f5f5f5] flex flex-col items-center p-8">
       <div className="w-full max-w-6xl flex flex-col md:flex-row">
-        {/* Hero Section */}
         <section className="md:w-1/2 text-center md:text-left mb-2 md:mb-0 flex flex-col justify-start">
           <h1 className="text-2xl md:text-4xl font-extrabold text-black mb-8 font-Informal011 BT">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">
@@ -18,8 +17,6 @@ const ServicePage: React.FC = () => {
             </span>
           </h1>
         </section>
-
-        {/* Services Section */}
         <section className="md:w-1/2 grid grid-cols-1 gap-8">
           <ServiceCard
             title="Think ahead"

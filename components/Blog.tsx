@@ -1,36 +1,15 @@
-'use client';
+"use client";
 
-import React, { useRef } from 'react';
+import React from 'react';
 
-const ServicePage: React.FC = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const scrollLeft = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: -900, // Adjust this value based on your blog card width
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: 900, // Adjust this value based on your blog card width
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  // Blog content
+const BlogPage: React.FC = () => {
   const blogs = [
     {
       title: "Introduction to Bluepilot Interview Copilot: Revolutionizing Interview Preparation",
       summary: "Discover how Bluepilot Interview Copilot is transforming the way people prepare for interviews with innovative tools and strategies."
     },
     {
-      title: "How Real-Time Audio Transcription : Transforms the Interview Experience",
+      title: "How Real-Time Audio Transcription Transforms the Interview Experience",
       summary: "Learn about the impact of real-time audio transcription on enhancing interview experiences and improving accuracy."
     },
     {
@@ -39,96 +18,58 @@ const ServicePage: React.FC = () => {
     },
     {
       title: "AI Skill Development: Mastering the Future of Work",
-      summary: "Explore essential skills for AI development and how to prepare for a career in this rapidly evolving field"
+      summary: "Explore essential skills for AI development and how to prepare for a career in this rapidly evolving field."
     },
     {
-      title: "Top AI Interview Questions and How to Prepare for Them",
-      summary: "Explore essential skills for AI development and how to prepare for a career in this rapidly evolving field"
+      title: "Tailoring Your Resume with AI: Stand Out in Job Applications",
+      summary: "Learn how to use AI tools to customize your resume and cover letter, making them more attractive to potential employers."
+    },
+    {
+      title: "AI-Driven Job Matching: Finding the Perfect Role with Technology",
+      summary: "Discover how AI algorithms can match your skills and experiences with the right job opportunities, enhancing your job search efficiency."
     },
   ];
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] flex flex-col items-center p-6">
-      <div className="w-full max-w-6xl flex flex-col md:flex-row">
-        {/* Hero Section */}
-        <section className="md:w-1/3 text-center md:text-left mb-8 md:mb-0 flex flex-col justify-center items-center md:items-start">
-          <h1 className="text-2xl md:text-4xl font-extrabold text-black mb-4 font-Informal011 BT">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">
-              EXPLORE OUR BLOG
+      <div className="w-full max-w-7xl">
+        <section className="text-center mb-20 mt-20">  {/* Increased margin at the top */}
+          <h1 className="text-4xl md:text-4xl font-extrabold text-black mb-4">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff]">
+              Discover Our Blog
             </span>
-            <span className="text-gray-800 ml-2">
-              FOR LATEST INSIGHTS
-            </span>
+            <span className="text-gray-800 block mt-2">Latest Insights and Innovations</span>
           </h1>
-
-          {/* Scroll Buttons */}
-          <div className="flex justify-center items-center mt-4">
-            <button
-              onClick={scrollLeft}
-              className="bg-gray-200 text-black p-4 mx-2 rounded-full shadow-lg"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 12H5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 5L5 12L12 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <button
-              onClick={scrollRight}
-              className="bg-gray-200 text-black p-4 mx-2 rounded-full shadow-lg"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12H19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 19L19 12L12 5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
         </section>
-
-        {/* Blogs Section */}
-        <section className="md:w-[59%] flex flex-col items-center mt-40">
-          <div className="relative w-full overflow-hidden">
-            <div className="overflow-hidden">
-              <div
-                ref={scrollContainerRef}
-                className="flex py-4 space-x-6"
-                style={{
-                  overflowX: 'scroll', // Enable horizontal scrolling
-                  scrollbarWidth: 'none', // Firefox
-                  msOverflowStyle: 'none', // Internet Explorer and Edge
-                  WebkitOverflowScrolling: 'touch', // For smooth scrolling on iOS
-                }}
-              >
-                {/* Scrollable Blog Cards */}
-                {blogs.map((blog, index) => (
-                  <div
-                    key={index}
-                    className="flex-none w-80 p-6 bg-white shadow-lg rounded-lg flex flex-col justify-between"
-                    style={{ height: '32rem' }} // Set your desired height here
-                  >
-                    <div>
-                      <h3 className="text-xl font-semibold mb-3">
-                        <span className="text-black">
-                          {blog.title.split(":")[0]}
-                        </span>
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff]">
-                          {blog.title.split(":")[1]}
-                        </span>
-                      </h3>
-                    </div>
-                    <div>
-                      <p className="text-gray-600 text-base leading-relaxed">
-                        {blog.summary}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {blogs.map((blog, index) => (
+            <div
+              key={index}
+              className={`p-6 bg-white shadow-lg rounded-lg flex flex-col justify-between transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl ${index % 2 === 0 ? 'translate-y-2' : '-translate-y-2'}`}
+              style={{ height: '22rem' }}
+            >
+              <div>
+                <h3 className="text-2xl font-semibold mb-3 text-black">
+                  {blog.title.split(":")[0]}
+                </h3>
+                <h4 className="text-xl font-semibold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff]">
+                  {blog.title.split(":")[1]}
+                </h4>
+                <p className="text-gray-600 text-md leading-relaxed">
+                  {blog.summary}
+                </p>
+              </div>
+              <div className="mt-4">
+                <a href="#" className="text-[#4895ef] font-bold text-md">
+                  Read More →
+                </a>
               </div>
             </div>
-          </div>
+          ))}
         </section>
       </div>
     </div>
   );
 };
 
-export default ServicePage;
+export default BlogPage;

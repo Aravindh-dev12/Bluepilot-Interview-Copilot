@@ -10,16 +10,14 @@ export default function Feedback() {
   const router = useRouter();
 
   const submitFeedback = () => {
-    // Handle feedback submission logic here
     console.log("Feedback submitted:", feedbackText);
-    router.push("/"); // Redirect to home page after submission
+    router.push("/"); 
   };
 
   return (
     <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
       <h2 className="text-2xl font-semibold mb-6">We Value Your Feedback</h2>
       <div className="flex justify-around mb-4">
-        {/* Emojis for feedback */}
         <span role="img" aria-label="excellent" className="text-3xl cursor-pointer">😊</span>
         <span role="img" aria-label="good" className="text-3xl cursor-pointer">🙂</span>
         <span role="img" aria-label="average" className="text-3xl cursor-pointer">😐</span>

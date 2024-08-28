@@ -8,7 +8,6 @@ const LoginSignup: React.FC = () => {
     <section className="flex justify-center items-center w-full h-screen bg-gray-300">
       <div className="relative w-4/5">
         <div className="flex justify-between bg-gray-800 rounded-3xl">
-          {/* Unregistered (Sign In) */}
           <div className="w-1/2 p-16 text-white font-light">
             <h2 className="text-2xl mb-4">Welcome Back</h2>
             <p className="text-sm mb-8">Already have an account? Sign in to access your profile and manage your account settings.</p>
@@ -19,8 +18,6 @@ const LoginSignup: React.FC = () => {
               Sign In
             </button>
           </div>
-
-          {/* Registered (Sign Up) */}
           <div className="w-1/2 p-16 text-white font-light">
             <h2 className="text-2xl mb-4">New Here?</h2>
             <p className="text-sm mb-8">Join us today to start exploring and accessing your personalized content. It's quick and easy!</p>
@@ -32,14 +29,10 @@ const LoginSignup: React.FC = () => {
             </button>
           </div>
         </div>
-
-        {/* Forms Container */}
-        <div
-  className={`absolute top-[40%] left-0 w-1/2 min-h-[420px] bg-white rounded-3xl shadow-md transform transition-transform duration-500 ${
+        <div className={`absolute top-[-1 %] left-0 w-1/2 min-h-[420px] bg-white rounded-3xl shadow-md transform transition-transform duration-500 ${
     showLogin ? 'translate-x-0' : 'translate-x-full'
   }`}
 >
-          {/* Login Form */}
           {showLogin && (
             <div className="p-10">
               <h2 className="text-xl font-medium text-pink-400 mb-12 uppercase tracking-wide">Log In</h2>
@@ -67,10 +60,8 @@ const LoginSignup: React.FC = () => {
               </div>
             </div>
           )}
-
-          {/* Sign Up Form */}
           {!showLogin && (
-            <div className="p-10">
+            <div className="p-12">
               <h2 className="text-xl font-medium text-pink-400 mb-12 uppercase tracking-wide">Sign Up</h2>
               <div className="mb-5">
                 <input

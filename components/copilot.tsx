@@ -8,6 +8,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useCompletion } from "ai/react";
 import { FLAGS, HistoryData } from "@/lib/types";
 import { Switch } from "@/components/ui/switch";
+import Link from "next/link"; // Import the Link component
+
 
 interface CopilotProps {
   addInSavedData: (data: HistoryData) => void;
@@ -87,15 +89,12 @@ export function Copilot({ addInSavedData }: CopilotProps) {
 
   const handlePause = () => {
     setIsPaused((prev) => !prev);
-    // Handle pause logic here, e.g., stop recording
   };
 
   const handleFinish = () => {
-    // Show feedback pop-up
     const isFeedbackSubmitted = confirm("Please provide your feedback.");
 
     if (isFeedbackSubmitted) {
-      // After feedback is submitted, redirect to home page
       window.location.assign("/");
     }
   };
@@ -103,9 +102,11 @@ export function Copilot({ addInSavedData }: CopilotProps) {
   return (
     <div className="bg-white p-8 rounded-lg shadow-2xl border border-gray-300 relative">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-3xl font-bold text-gray-800">
-          Bluepilot
-        </h2>
+      <Link href="/" passHref> {/* Wrap the text with the Link component */}
+          <h2 className="text-3xl font-bold text-gray-800 cursor-pointer">
+            Bluepilot
+          </h2>
+        </Link>
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2 text-sm">
             <Label className="text-black-800 font-semibold">
@@ -113,7 +114,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
               <span className="text-xs p-1">(Ctrl + s)</span>
             </Label>
             <Switch
-              className="data-[state=checked]:bg-green-600 data-[state=unchecked]:bg-gray-200"
+              className="data-[state=checked]:bg-gray-600 data-[state=unchecked]:bg-gray-200"
               onCheckedChange={handleFlag}
               checked={flag === FLAGS.COPILOT}
             />
@@ -130,7 +131,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
               {isPaused ? "Resume" : "Pause"}
             </Button>
             <Button
-              className="bg-btn-grad text-black bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right"
+              className="border-2 border-black text-bold text-black bg-transparent transition-all duration-500 hover:bg-transparent hover:text-black"
               onClick={handleFinish}
             >
               Finish
@@ -192,7 +193,7 @@ export function Copilot({ addInSavedData }: CopilotProps) {
           className="w-full max-w-lg flex justify-center"
         >
           <Button
-            className="w-60 h-12 bg-btn-grad text-bold text-black bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right"
+            className="w-60 h-12 border-2 border-black text-bold text-black bg-transparent transition-all duration-500 hover:bg-transparent hover:text-black"
             size="lg"
             variant="solid"
             disabled={isLoading}

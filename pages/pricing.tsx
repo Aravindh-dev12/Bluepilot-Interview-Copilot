@@ -7,40 +7,30 @@ const PricingPlans: React.FC = () => {
       title: "Free Trial",
       price: "Free",
       features: [
-        "AI Interview Copilot - 10-minute free trial",
-        "24/7 Customer Support"
+        "AI Interview Copilot - 1 session",
+        "AI Skill Development - 1 assessment",
+        "24/7 Customer Support",
+        "7-day limited access"
       ],
       isPro: false,
     },
     {
       title: "Basic",
-      price: "$19.00 per month",
+      price: "$29.00 per month",
       features: [
         "AI Interview Copilot - 3 sessions/month",
-        "AI Skill Development - 3 assessments/month",
-        "AI Question Generator - 3 sessions/month",
+        "AI Skill Development - Up to 5 assessments/month",
         "24/7 Customer Support"
       ],
       isPro: false,
     },
     {
       title: "Pro",
-      price: "$39.00 per month",
-      features: [
-        "AI Interview Copilot - 9 sessions/month",
-        "AI Skill Development - 12 assessments/month",
-        "AI Question Generator - 15 sessions/month",
-        "24/7 Customer Support"
-      ],
-      isPro: true,
-    },
-    {
-      title: "Premium",
-      price: "$59.00 per month",
+      price: "$49.00 per month",
       features: [
         "AI Interview Copilot - Unlimited sessions",
         "AI Skill Development - Unlimited assessments",
-        "AI Question Generator - Unlimited sessions",
+        "AI Application Tailor - Unlimited access",
         "24/7 Customer Support"
       ],
       isPro: true,

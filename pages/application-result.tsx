@@ -10,7 +10,6 @@ const ApplicationResult: React.FC<ResultsProps> = ({ tailoredContent }) => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
-      {/* Main Content */}
       <main className="flex-grow w-full max-w-4xl mx-auto bg-white shadow-lg rounded-lg mt-8 p-8">
         <section>
           <h1 className="text-center text-3xl font-bold mb-6 text-blue-600">Application Result</h1>
@@ -29,7 +28,6 @@ const ApplicationResult: React.FC<ResultsProps> = ({ tailoredContent }) => {
   );
 };
 
-// Fetch tailored content from query parameters
 export const getServerSideProps = async (context: { query: { tailoredContent: string } }) => {
   const { tailoredContent } = context.query;
 

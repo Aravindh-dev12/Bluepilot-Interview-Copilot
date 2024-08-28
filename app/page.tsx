@@ -1,4 +1,4 @@
-import Header from "@/components/Header"; // Import the Header component
+import Header from "@/components/Header"; 
 import HomePage from "@/components/Home";
 import Service from "@/components/Service"; 
 import AiInterview from "@/components/AiInterview"; 
@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="m-2 overscroll-none">
-      <Header /> {/* Add Header component */}
+      <Header /> 
       <HomePage /> 
       <Service />
       <AiInterview />

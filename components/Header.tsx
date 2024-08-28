@@ -12,12 +12,9 @@ const Header = () => {
 
   return (
     <header className="flex justify-between items-center p-6 border-b border-gray-300 bg-gray-50 relative">
-      {/* Wrap "BluePilot" in a <Link> component */}
       <Link href="/" className="text-2xl font-bold font-itc-bauhaus">
         BluePilot
       </Link>
-
-      {/* Sign up button for small screens */}
       <div className="md:hidden flex items-center space-x-2">
         <Link href="/signup" className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-2 text-lg">
           Sign up
@@ -39,8 +36,6 @@ const Header = () => {
           </svg>
         </button>
       </div>
-
-      {/* Desktop navigation */}
       <nav className="hidden md:flex space-x-16 text-lg">
         <Link href="/interviewcopilot" className="hover:underline">AI Interview Copilot</Link>
         <Link href="/skilldevelopment" className="hover:underline">AI Skill Development</Link>
@@ -51,13 +46,9 @@ const Header = () => {
           </span>
         </Link>
       </nav>
-
-      {/* Sign up button for desktop */}
       <Link href="/signup" className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg hover:bg-gray-200">
         Sign up
       </Link>
-
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="fixed inset-0 bg-white z-50 flex flex-col">
           <button 

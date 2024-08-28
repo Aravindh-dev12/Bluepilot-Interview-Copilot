@@ -4,7 +4,7 @@ import { Copilot } from "@/components/copilot";
 import History from "@/components/History";
 import { HistoryData } from "@/lib/types";
 import { useEffect, useRef, useState } from "react";
-import '../app/globals.css'; // Adjust path if necessary
+import '../app/globals.css'; 
 
 export default function MainPage() {
   const isRendered = useRef(false);
