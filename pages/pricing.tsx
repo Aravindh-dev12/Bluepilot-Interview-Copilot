@@ -1,4 +1,5 @@
 import React from 'react';
+import '../app/globals.css';
 
 const PricingPlans: React.FC = () => {
 

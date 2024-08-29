@@ -1,165 +1,78 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Link from 'next/link';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { OpenAI } from 'openai'; 
+import Footer from "../components/Footer";
 import '../app/globals.css';
 
-const JobApplicationTailor: React.FC = () => {
-  const [resume, setResume] = useState<File | null>(null);
-  const [coverLetter, setCoverLetter] = useState<File | null>(null);
-  const [jobDescription, setJobDescription] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [tailoredContent, setTailoredContent] = useState<string | null>(null);
-
-  const handleFileChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    setter: React.Dispatch<React.SetStateAction<File | null>>
-  ) => {
-    if (e.target.files) {
-      setter(e.target.files[0]);
-    }
-  };
-
-  const handleFileToText = async (file: File | null): Promise<string> => {
-    if (!file) return '';
-    return new Promise<string>((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => resolve(reader.result as string);
-      reader.onerror = reject;
-      reader.readAsText(file);
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      const resumeText = await handleFileToText(resume);
-      const coverLetterText = await handleFileToText(coverLetter);
-      const openai = new OpenAI({
-        apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY || '',
-      });
-      const prompt = `
-        Tailor the following resume and cover letter to match this job description:
-        
-        Job Description: ${jobDescription}
-        
-        Resume: ${resumeText}
-        
-        Cover Letter: ${coverLetterText}
-      `;
-
-      const response = await openai.completions.create({
-        model: 'text-davinci-003',
-        prompt: prompt,
-        max_tokens: 1500,
-        temperature: 0.7,
-      });
-
-      const tailoredText = response.choices[0]?.text || '';
-      setTailoredContent(tailoredText);
-    } catch (error) {
-      console.error('Error tailoring application:', error);
-      setTailoredContent('An error occurred while tailoring your application.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
+const AIJobApplicationTailor: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
+      {/* Header */}
       <Header />
-      <div className="py-8">
-        <div className="text-center">
-          <h2 className="text-4xl md:text-4xl font-bold mb-4 text-gray-800">
-            CRAFTING THE PERFECT FIT FOR SUCCESS
-          </h2>
-          <p className="text-2xl mb-12 bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent">
-            Master the Art of Tailoring AI Job Applications for{' '}
-            <span className="bg-gradient-to-r from-[#4895ef] to-[#c77dff] bg-clip-text text-transparent">
-              Optimal Success in a Competitive Market
-            </span>
-          </p>
+      
+      {/* Page Heading Section */}
+      <div className="text-center mt-16">
+        <h1 className="text-4xl md:text-4xl font-bold mb-4 text-gray-800">
+          CRAFTING THE PERFECT FIT FOR SUCCESS
+        </h1>
+        <p className="text-2xl mb-12 bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent">
+          Master the Art of Tailoring AI Job Applications for <span className="bg-gradient-to-r from-[#4895ef] to-[#c77dff] bg-clip-text text-transparent">Optimal Success in a Competitive Market</span>
+        </p>
+      </div>
+      
+      {/* Main Content Section */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-40 mt-20">
+        
+        {/* Top Section */}
+        <div className="flex flex-col justify-center">
+          <img src="/path/to/icon-ai.png" alt="AI Icon" className="mb-6 w-16 h-16" />
+          <div className="flex space-x-6">
+            {/* Cards */}
+            <div className="bg-white shadow-md rounded-lg p-4">
+              <img src="/path/to/template1.png" alt="Template 1" />
+            </div>
+            <div className="bg-white shadow-md rounded-lg p-4">
+              <img src="/path/to/template2.png" alt="Template 2" />
+            </div>
+            <div className="bg-white shadow-md rounded-lg p-4">
+              <img src="/path/to/template3.png" alt="Template 3" />
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col justify-center">
+          <h2 className="text-3xl font-bold mb-4">Tailor Your Job Application with AI</h2>
+          <p className="text-lg mb-6">Our AI-powered tool helps you create job applications that stand out. Customize your resume, cover letter, and portfolio with AI-driven templates that highlight your strengths and match job descriptions perfectly. Start your journey towards your dream job today</p>
+        </div>
+        
+        {/* Bottom Section */}
+        <div className="flex flex-col items-center">
+          <h2 className="text-3xl font-bold mb-4">Create a Custom Application Path</h2>
+          <p className="text-lg mb-6">Our AI Tailor provides personalized recommendations based on your career goals. Build a custom application path that includes tailored job applications, interview prep, and follow-up strategies. Maximize your chances of success with every job application</p>
+          {/* Get Started Button */}
+        </div>
+        <div className="flex justify-center">
+          <img src="/path/to/icon-path.png" alt="Custom Path Icon" className="mb-6 w-16 h-16" />
+          <div className="bg-white shadow-md rounded-lg p-4">
+            <img src="/path/to/custom-application-path.png" alt="Custom Application Path" />
+          </div>
         </div>
       </div>
-      <main className="flex-grow w-full max-w-4xl mx-auto bg-white shadow-lg rounded-lg mb-20 p-8">
-        {!tailoredContent ? (
-          <section>
-            <h2 className="text-2xl text-center font-semibold mb-4 bg-gradient-to-r from-[#4895ef] to-[#c77dff] bg-clip-text text-transparent">
-              Optimize Your Job Applications
-            </h2>
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <label htmlFor="resume" className="block text-sm font-medium text-gray-700">
-                  Upload Your Resume
-                </label>
-                <input
-                  type="file"
-                  id="resume"
-                  name="resume"
-                  onChange={(e) => handleFileChange(e, setResume)}
-                  className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="coverLetter" className="block text-sm font-medium text-gray-700">
-                  Upload Your Cover Letter
-                </label>
-                <input
-                  type="file"
-                  id="coverLetter"
-                  name="coverLetter"
-                  onChange={(e) => handleFileChange(e, setCoverLetter)}
-                  className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="jobDescription" className="block text-sm font-medium text-gray-700">
-                  Job Description
-                </label>
-                <textarea
-                  id="jobDescription"
-                  name="jobDescription"
-                  rows={6}
-                  value={jobDescription}
-                  onChange={(e) => setJobDescription(e.target.value)}
-                  className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Paste the job description here..."
-                />
-              </div>
-
-              <div className="flex justify-center">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="bg-btn-grad text-black bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-6 text-lg w-64"
-                >
-                  {loading ? 'Tailoring...' : 'Tailor My Application'}
-                </button>
-              </div>
-            </form>
-          </section>
-        ) : (
-          <section>
-            <h1 className="text-center text-3xl font-bold mb-6 text-blue-600">Application Result</h1>
-            <div className="bg-gray-100 p-4 rounded-md whitespace-pre-wrap">
-              {tailoredContent}
-            </div>
-            <button
-              onClick={() => setTailoredContent(null)}
-              className="mt-6 w-full bg-gray-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
-            >
-              Tailor Another Application
-            </button>
-          </section>
-        )}
-      </main>
+      
+      {/* Button with Gap */}
+      <div className="flex justify-center w-full mt-20 mb-10"> {/* Added mb-10 for margin-bottom */}
+        <Link href="/ApplicationTailor">
+          <button
+            className="bg-btn-grad text-black bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-6 text-lg w-64"
+          >
+            Get Started
+          </button>
+        </Link>
+      </div>
+      
+      {/* Footer */}
       <Footer />
     </div>
   );
 };
 
-export default JobApplicationTailor;
+export default AIJobApplicationTailor;

@@ -56,68 +56,7 @@ const interviewcopilot = () => {
           </p>
         </div>
       </div>
-
       </div>
-        {/* Benefits Section */}
-        <h2 className="text-3xl font-semibold mb-10">
-          Why Choose Bluepilot ?
-        </h2>
-
-        <div className="max-w-4xl mx-auto mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 justify-center">
-          <div className="flex flex-col p-8 border rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg bg-white max-w-md min-h-[300px]">
-            <div className="flex-1 flex flex-col justify-between">
-              <div className="flex items-center mb-2">
-
-                <img className="w-7 h-7 mr-4" src="/boost.png" alt="Boost Confidence Icon" />
-                <h3 className="text-xl font-bold text-gray-800">Boost Confidence</h3>
-              </div>
-              <p className="text-gray-600 text-start">
-                Our AI-driven suggestions enhance your interview readiness, <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">helping you approach interviews</span> with confidence.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col p-8 border rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg bg-white max-w-md min-h-[300px]">
-            <div className="flex-1 flex flex-col justify-between">
-              <div className="flex items-center mb-2">
-
-                <img className="w-7 h-7 mr-4" src="/save.png" alt="Save Time Icon" />
-                <h3 className="text-xl font-bold text-gray-800">Save Time</h3>
-              </div>
-              <p className="text-gray-600 text-start">
-                Maximize your preparation time with <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">real-time feedback and tailored advice</span> to focus on your strengths.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col p-8 border rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg bg-white max-w-md min-h-[300px]">
-            <div className="flex-1 flex flex-col justify-between">
-              <div className="flex items-center mb-2">
-            
-                <img className="w-7 h-7 mr-4" src="/enhance.png" alt="Enhance Communication Skills Icon" />
-                <h3 className="text-xl font-bold text-gray-800">Enhance Communication Skills</h3>
-              </div>
-              <p className="text-gray-600 text-start">
-                Learn to articulate your thoughts more effectively with <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">personalized response generation</span> and practice sessions.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col p-8 border rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg bg-white max-w-md min-h-[300px]">
-            <div className="flex-1 flex flex-col justify-between">
-              <div className="flex items-center mb-2">
-              
-                <img className="w-7 h-7 mr-4" src="/feedback.png" alt="Real-Time Feedback Icon" />
-                <h3 className="text-xl font-bold text-gray-800">Real-Time Feedback</h3>
-              </div>
-              <p className="text-gray-600 text-start">
-                Get instant feedback on your answers,<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md"> helping you refine your responses,</span> and improve your overall performance.
-              </p>
-            </div>
-          </div>
-        </div>
-        </div>
         {/* Support Software Section */}
           <div className="bg-[#F0EBFF] py-6 px-4 rounded-lg">
             <div className="overflow-hidden whitespace-nowrap">
@@ -145,7 +84,64 @@ const interviewcopilot = () => {
               </div>
             </div>
           </div>
+          <h2 className="text-3xl font-semibold mt-10">
+          Why Choose Bluepilot ?
+        </h2>
+          <div className="max-w-4xl mx-auto mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 justify-center">
+          <div className="flex flex-col p-8 border rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg bg-white max-w-md min-h-[300px]">
+            <div className="flex-1 flex flex-col justify-between">
+              <div className="flex items-center mb-2">
 
+                <img className="w-14 h-14 mr-4" src="/boost.png" alt="Boost Confidence Icon" />
+                <h3 className="text-2xl font-bold text-gray-800">Boost Confidence</h3>
+              </div>
+              <p className="text-gray-600 text-start">
+                Our AI-driven suggestions enhance your interview readiness, <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">helping you approach interviews</span> with confidence.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col p-8 border rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg bg-white max-w-md min-h-[300px]">
+            <div className="flex-1 flex flex-col justify-between">
+              <div className="flex items-center mb-2">
+
+                <img className="w-14 h-14 mr-4" src="/save.png" alt="Save Time Icon" />
+                <h3 className="text-2xl font-bold text-gray-800">Save Time</h3>
+              </div>
+              <p className="text-gray-600 text-start">
+                Maximize your preparation time with <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">real-time feedback and tailored advice</span> to focus on your strengths.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col p-8 border rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg bg-white max-w-md min-h-[300px]">
+            <div className="flex-1 flex flex-col justify-between">
+              <div className="flex items-center mb-2">
+            
+                <img className="w-14 h-14 mr-4" src="/enhance.png" alt="Enhance Communication Skills Icon" />
+                <h3 className="text-2xl font-bold text-gray-800">Enhance Skills</h3>
+              </div>
+              <p className="text-gray-600 text-start">
+                Learn to articulate your thoughts more effectively with <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">personalized response generation</span> and practice sessions.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col p-8 border rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg bg-white max-w-md min-h-[300px]">
+            <div className="flex-1 flex flex-col justify-between">
+              <div className="flex items-center mb-2">
+              
+                <img className="w-14 h-14 mr-4" src="/feedback.png" alt="Real-Time Feedback Icon" />
+                <h3 className="text-2xl font-bold text-gray-800">Real-Time Feedback</h3>
+              </div>
+              <p className="text-gray-600 text-start">
+                Get instant feedback on your answers,<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md"> helping you refine your responses,</span> and improve your overall performance.
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
         {/* Call to Action */}
         <div className="mt-20">
         <h2 className="text-4xl font-semibold mb-10">

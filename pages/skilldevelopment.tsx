@@ -8,7 +8,7 @@ const SkillAssessmentPage: React.FC = () => {
   const router = useRouter();
 
   const handleGetStarted = () => {
-    router.push('/results');
+    router.push('/SkillAssesment');
   };
 
   return (

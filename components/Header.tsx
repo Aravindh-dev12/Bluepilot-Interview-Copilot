@@ -37,10 +37,9 @@ const Header = () => {
         </button>
       </div>
       <nav className="hidden md:flex space-x-16 text-lg">
-        <Link href="/interviewcopilot" className="hover:underline">AI Interview Copilot</Link>
-        <Link href="/skilldevelopment" className="hover:underline">AI Skill Development</Link>
-        <Link href="/JobApplicationTailor" className="hover:underline flex items-center">
-          AI Application Optimizer
+        <Link href="/interviewcopilot" className="hover:underline">Interview Copilot</Link>
+        <Link href="/skilldevelopment" className="hover:underline">Skill Development</Link>
+        <Link href="/JobApplicationTailor" className="hover:underline flex items-center"> Application Optimizer
           <span className="ml-2 bg-yellow-300 text-xs text-gray-800 px-2 py-1 rounded-full">
             Beta
           </span>
@@ -58,10 +57,9 @@ const Header = () => {
             &times;
           </button>
           <nav className="flex flex-col items-start space-y-6 p-6 mt-20">
-            <Link href="/interviewcopilot" className="text-2xl" onClick={toggleMenu}>AI Interview Copilot</Link>
-            <Link href="/skilldevelopment" className="text-2xl" onClick={toggleMenu}>AI Skill Development</Link>
-            <Link href="/JobApplicationTailor" className="text-2xl flex items-center" onClick={toggleMenu}>
-              AI Application Optimizer
+            <Link href="/interviewcopilot" className="text-2xl" onClick={toggleMenu}>Interview Copilot</Link>
+            <Link href="/skilldevelopment" className="text-2xl" onClick={toggleMenu}>Skill Development</Link>
+            <Link href="/JobApplicationTailor" className="text-2xl flex items-center" onClick={toggleMenu}> Application Optimizer
               <span className="ml-2 bg-yellow-300 text-xs text-gray-800 px-2 py-1 rounded-full">
                 Beta
               </span>
