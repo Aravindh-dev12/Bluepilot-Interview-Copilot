@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../components/Header';
 import { OpenAI } from 'openai';
 import '../app/globals.css';
 
@@ -73,22 +72,22 @@ const JobApplicationTailor: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
-      <Header />
+    <div className="min-h-screen flex flex-col">
       <div className="py-8">
-        <div className="text-center">
-          <h2 className="text-4xl md:text-4xl font-bold mb-4 text-gray-800">
-            TAILOR YOUR APPLICATION
+        <div className="text-start">
+          <h2 className="text-3xl md:text-3xl font-bold mb-2 text-gray-800">
+            Optimize Your Job Application
           </h2>
+          <p className="text-lg mb-12 bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent">
+            Upload your resume and cover letter, then provide the job description to receive a tailored application.
+            This tool helps you enhance your job application with personalized content to match the requirements of your target job.
+          </p>
         </div>
       </div>
-      <main className="flex-grow w-full max-w-4xl mx-auto bg-white shadow-lg rounded-lg mb-20 p-8">
+      <main className="flex-grow w-full max-w-4xl mx-auto bg-transparent shadow-lg rounded-lg mb-8 pt-2 p-8">
         {!tailoredContent ? (
           <section>
-            <h2 className="text-2xl text-center font-semibold mb-4 bg-gradient-to-r from-[#4895ef] to-[#c77dff] bg-clip-text text-transparent">
-              Optimize Your Job Applications
-            </h2>
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-6 mt-[-20px]" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="resume" className="block text-sm font-medium text-gray-700">
                   Upload Your Resume
@@ -98,7 +97,7 @@ const JobApplicationTailor: React.FC = () => {
                   id="resume"
                   name="resume"
                   onChange={(e) => handleFileChange(e, setResume)}
-                  className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-black-900 focus:border-black-900"
                 />
               </div>
 
@@ -111,7 +110,7 @@ const JobApplicationTailor: React.FC = () => {
                   id="coverLetter"
                   name="coverLetter"
                   onChange={(e) => handleFileChange(e, setCoverLetter)}
-                  className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-black-500 focus:border-black-900"
                 />
               </div>
 
@@ -125,7 +124,7 @@ const JobApplicationTailor: React.FC = () => {
                   rows={6}
                   value={jobDescription}
                   onChange={(e) => setJobDescription(e.target.value)}
-                  className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-black-900 focus:border-black-900"
                   placeholder="Paste the job description here..."
                 />
               </div>
@@ -134,7 +133,7 @@ const JobApplicationTailor: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="bg-btn-grad text-black bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-6 text-lg w-64"
+                  className="border-2 border-black bg-gray-100 text-black px-4 py-2 text-lg w-54 rounded-full hover:bg-gray-100 mb-1"
                 >
                   {loading ? 'Tailoring...' : 'Try My Application'}
                 </button>
@@ -143,8 +142,8 @@ const JobApplicationTailor: React.FC = () => {
           </section>
         ) : (
           <section>
-            <h1 className="text-center text-3xl font-bold mb-6 text-blue-600">Application Result</h1>
-            <div className="bg-gray-100 p-4 rounded-md whitespace-pre-wrap">
+            <h1 className="text-center text-3xl font-bold mb-6 text-black-600">Application Result</h1>
+            <div className="bg-transparent p-4 rounded-md whitespace-pre-wrap">
               {tailoredContent}
             </div>
             <button

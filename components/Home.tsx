@@ -43,9 +43,9 @@ export default function HomePage() {
                   Get Started
                 </button>
               </Link>
-              <Link href="/contact"> 
+              <Link href="/dashboard"> 
                 <button className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg w-44 hover:bg-gray-200 transition duration-300">
-                  Learn More
+                  Try Free
                 </button>
               </Link>
             </div>

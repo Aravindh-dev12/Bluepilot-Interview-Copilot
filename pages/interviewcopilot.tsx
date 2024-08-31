@@ -3,8 +3,7 @@ import Footer from "../components/Footer";
 import Link from "next/link";
 import '../app/globals.css';
 
-
-const interviewcopilot = () => {
+const InterviewCopilot = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#f5f5f5] to-white">
       <Header />
@@ -58,7 +57,7 @@ const interviewcopilot = () => {
       </div>
       </div>
         {/* Support Software Section */}
-          <div className="bg-[#F0EBFF] py-6 px-4 rounded-lg">
+          <div className="bg-[#F0EBFF] py-6 px-4 rounded-lg  w-100%">
             <div className="overflow-hidden whitespace-nowrap">
               <div className="flex items-center space-x-20 animate-scroll">
                 <div className="flex items-center space-x-2">
@@ -87,60 +86,48 @@ const interviewcopilot = () => {
           <h2 className="text-3xl font-semibold mt-10">
           Why Choose Bluepilot ?
         </h2>
-          <div className="max-w-4xl mx-auto mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 justify-center">
-          <div className="flex flex-col p-8 border rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg bg-white max-w-md min-h-[300px]">
-            <div className="flex-1 flex flex-col justify-between">
-              <div className="flex items-center mb-2">
-
-                <img className="w-14 h-14 mr-4" src="/boost.png" alt="Boost Confidence Icon" />
-                <h3 className="text-2xl font-bold text-gray-800">Boost Confidence</h3>
-              </div>
-              <p className="text-gray-600 text-start">
-                Our AI-driven suggestions enhance your interview readiness, <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">helping you approach interviews</span> with confidence.
-              </p>
-            </div>
+      <div className="max-w-4xl mx-auto mt-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-40 mt-20">
+      
+      {/* Top Section */}
+      <div className="flex flex-col justify-center">
+        <img src="/path/to/icon-ai.png" alt="AI Icon" className="mb-6 w-16 h-16" />
+        <div className="flex space-x-6">
+          {/* Cards */}
+          <div className="bg-white shadow-md rounded-lg p-4">
+            <img src="/path/to/template1.png" alt="Template 1" />
           </div>
-
-          <div className="flex flex-col p-8 border rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg bg-white max-w-md min-h-[300px]">
-            <div className="flex-1 flex flex-col justify-between">
-              <div className="flex items-center mb-2">
-
-                <img className="w-14 h-14 mr-4" src="/save.png" alt="Save Time Icon" />
-                <h3 className="text-2xl font-bold text-gray-800">Save Time</h3>
-              </div>
-              <p className="text-gray-600 text-start">
-                Maximize your preparation time with <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">real-time feedback and tailored advice</span> to focus on your strengths.
-              </p>
-            </div>
+          <div className="bg-white shadow-md rounded-lg p-4">
+            <img src="/path/to/template2.png" alt="Template 2" />
           </div>
-
-          <div className="flex flex-col p-8 border rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg bg-white max-w-md min-h-[300px]">
-            <div className="flex-1 flex flex-col justify-between">
-              <div className="flex items-center mb-2">
-            
-                <img className="w-14 h-14 mr-4" src="/enhance.png" alt="Enhance Communication Skills Icon" />
-                <h3 className="text-2xl font-bold text-gray-800">Enhance Skills</h3>
-              </div>
-              <p className="text-gray-600 text-start">
-                Learn to articulate your thoughts more effectively with <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">personalized response generation</span> and practice sessions.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col p-8 border rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg bg-white max-w-md min-h-[300px]">
-            <div className="flex-1 flex flex-col justify-between">
-              <div className="flex items-center mb-2">
-              
-                <img className="w-14 h-14 mr-4" src="/feedback.png" alt="Real-Time Feedback Icon" />
-                <h3 className="text-2xl font-bold text-gray-800">Real-Time Feedback</h3>
-              </div>
-              <p className="text-gray-600 text-start">
-                Get instant feedback on your answers,<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md"> helping you refine your responses,</span> and improve your overall performance.
-              </p>
-            </div>
+          <div className="bg-white shadow-md rounded-lg p-4">
+            <img src="/path/to/template3.png" alt="Template 3" />
           </div>
         </div>
+      </div>
+
+      <div className="flex flex-col justify-center text-left w-full lg:w-[500px] mx-auto">
+        <h2 className="text-3xl font-bold mb-6">Ace Your Interviews with AI</h2>
+        <p className="text-lg mt-4 mb-6">
+          Our AI-powered Interview Copilot helps you excel by offering personalized feedback, practice questions, and tips for both technical and behavioral interviews. Tailored guidance ensures you perform at your best. Start preparing for your dream job today.
+        </p>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="flex flex-col items-start text-left w-full lg:w-[500px] mx-auto">
+        <h2 className="text-3xl font-bold mb-6">Real-time Audio Transcription</h2>
+        <p className="text-lg mt-4 mb-6">
+          Leverage real-time audio transcription to capture every spoken word during interviews with precision, ensuring that no details are missed and providing a reliable and accurate record of the conversation for thorough review and analysis.
+        </p>
+      </div>
+
+      <div className="flex justify-center">
+        <img src="/path/to/icon-path.png" alt="Custom Path Icon" className="mb-6 w-16 h-16" />
+        <div className="bg-white shadow-md rounded-lg p-4">
+          <img src="/path/to/custom-application-path.png" alt="Custom Application Path" />
+        </div>
+      </div>
+    </div>
         </div>
         {/* Call to Action */}
         <div className="mt-20">
@@ -161,4 +148,4 @@ const interviewcopilot = () => {
   );
 };
 
-export default interviewcopilot;
+export default InterviewCopilot;

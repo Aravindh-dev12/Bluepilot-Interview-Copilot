@@ -32,7 +32,7 @@ const AiSkill: React.FC = () => {
                 </p>
               </div>
               <div className="mt-6">
-                <Link href="/skilldevelopment">
+                <Link href="/skill">
                 <button
                   className="bg-btn-grad text-black bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-3 text-lg w-56 sm:w-40"
                 >
