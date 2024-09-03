@@ -12,11 +12,11 @@ const Header = () => {
 
   return (
     <header className="flex justify-between items-center p-6 border-b border-gray-300 bg-gray-50 relative">
-      <Link href="/" className="text-2xl font-bold font-itc-bauhaus">
+      <Link href="/" className="text-2xl">
         BluePilot
       </Link>
       <div className="md:hidden flex items-center space-x-2">
-        <Link href="/signup" className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-2 text-lg">
+        <Link href="/signup" className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg hover:bg-gray-200">
           Sign up
         </Link>
         <button onClick={toggleMenu} className="focus:outline-none">
@@ -40,11 +40,7 @@ const Header = () => {
         <Link href="/Interviewcopilot" className="hover:underline">Interview Copilot</Link>
         <Link href="/skill" className="hover:underline">Skill Development</Link>
         <Link href="/dashboard" className="hover:underline">Resume Builder</Link>
-        <Link href="/JobApplicationTailor" className="hover:underline flex items-center"> Application Optimizer
-          <span className="ml-2 bg-yellow-300 text-xs text-gray-800 px-2 py-1 rounded-full">
-            Beta
-          </span>
-        </Link>
+        <Link href="/JobApplicationTailor" className="hover:underline flex items-center"> Question Bank</Link>
       </nav>
       <Link href="/signup" className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg hover:bg-gray-200">
         Sign up
@@ -60,12 +56,8 @@ const Header = () => {
           <nav className="flex flex-col items-start space-y-6 p-6 mt-20">
             <Link href="/Interviewcopilot" className="text-2xl" onClick={toggleMenu}>Interview Copilot</Link>
             <Link href="/skill" className="text-2xl" onClick={toggleMenu}>Skill Development</Link>
-            <Link href="/dashboard" className="hover:underline">Resume Builder</Link>
-            <Link href="/JobApplicationTailor" className="text-2xl flex items-center" onClick={toggleMenu}> Application Optimizer
-              <span className="ml-2 bg-yellow-300 text-xs text-gray-800 px-2 py-1 rounded-full">
-                Beta
-              </span>
-            </Link>
+            <Link href="/dashboard" className="text-2xl" onClick={toggleMenu}>Resume Builder</Link>
+            <Link href="/JobApplicationTailor" className="text-2xl flex items-center" onClick={toggleMenu}> Question Bank</Link>
           </nav>
         </div>
       )}

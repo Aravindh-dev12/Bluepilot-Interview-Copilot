@@ -12,7 +12,7 @@ const AiInterview: React.FC = () => {
                 <span className="text-gray-800">“</span>
               </h1>
               <h1 className="text-3xl md:text-3xl font-extrabold text-black mb-8">
-                <span className="text-gray-800">REAL-WORLD SCENARIOS FOR </span>
+                <span className="text-gray-800">REAL-WORLD SCENARIOS FOR</span>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] ml-2">
                 TAILORING AI JOB APPLICATION
                 </span>

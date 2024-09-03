@@ -75,7 +75,7 @@ const JobApplicationTailor: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <div className="py-8">
         <div className="text-start">
-          <h2 className="text-3xl md:text-3xl font-bold mb-2 text-gray-800">
+          <h2 className="text-2xl md:text-2xl font-bold mb-2 text-gray-800">
             Optimize Your Job Application
           </h2>
           <p className="text-lg mb-12 bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent">

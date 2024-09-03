@@ -66,14 +66,14 @@ const skilldevelopment: React.FC = () => {
     <div className="min-h-screen text-gray-900">
       <section className="py-16 mt-[-20px]">
         <div className="container mx-auto text-start px-4">
-          <h2 className="text-3xl md:text-3xl font-bold mb-2 text-gray-800">Analyze Your Skills</h2>
+          <h2 className="text-2xl md:text-2xl font-semibold mb-2 text-gray-800">Analyze Your Skills</h2>
           <p className="text-lg mb-12 bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent">
           Submit your career goals to receive personalized tutorials and examples. This tool helps enhance your skills with with detailed content tailored to your professional development needs </p>
           <button
             onClick={() => setIsModalOpen(true)}
             className="border-2 border-black bg-gray-100 text-black px-4 py-2 text-lg w-44 rounded-full hover:bg-gray-100 mb-10"
           >
-            Get Started
+            Enter Skill
           </button>
         </div>
       </section>

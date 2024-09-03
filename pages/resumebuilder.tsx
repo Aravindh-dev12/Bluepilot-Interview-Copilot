@@ -61,7 +61,7 @@ const Resumebuilder: React.FC = () => {
   return (
     <div>
       <div className="container mx-auto text-start px-4">
-        <h2 className="text-3xl font-bold text-left mt-10 mb-6 text-gray-800">
+        <h2 className="text-2xl font-semibold text-left mt-10 mb-6 text-gray-800">
           Craft Your Professional Resume with AI Effortlessly
         </h2>
         <p className="text-lg mb-6 bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent text-left">

@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
               rel="noopener noreferrer"
               className="hover:text-blue-400 text-2xl md:text-3xl lg:text-4xl"
             >
-              𝕏 {/* Unicode for X icon */}
+              𝕏 
             </a>
             <a
               href="https://youtube.com"

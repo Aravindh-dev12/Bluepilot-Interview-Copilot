@@ -31,8 +31,12 @@ const QuestionBox: React.FC = () => {
         },
       });
 
-      const data = response.data.choices[0].text.trim().split('\n');
-      const questionsAndAnswers = data.map(item => item.split('Answer:')); // Adjust this based on actual response format
+      const data: string[] = response.data.choices[0].text.trim().split('\n');
+      const questionsAndAnswers: [string, string][] = data.map((item: string) => {
+        const [question, answer] = item.split('Answer:');
+        return [question.trim(), answer ? answer.trim() : ''];
+      });
+
       setQuestionsAndAnswers(questionsAndAnswers);
     } catch (err: any) {
       console.error('API call error:', err);
@@ -47,7 +51,7 @@ const QuestionBox: React.FC = () => {
     <div className="min-h-screen text-gray-900">
       <section id="hero" className="text-black py-16 w-full">
         <div className="container mx-auto text-start">
-          <h2 className="text-3xl md:text-3xl font-bold mb-8 text-gray-800">
+          <h2 className="text-2xl md:text-2xl font-semibold mb-8 text-gray-800">
             Prepare For Your Interview
           </h2>
           <p className="text-lg mb-12 bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent">
@@ -57,7 +61,7 @@ const QuestionBox: React.FC = () => {
             onClick={() => setShowModal(true)}
             className="border-2 border-black bg-gray-100 text-black px-4 py-2 text-lg w-44 rounded-full hover:bg-gray-100"
           >
-            Get Started
+            Generate 
           </button>
         </div>
       </section>
@@ -116,7 +120,7 @@ const QuestionBox: React.FC = () => {
               <option value="analytical">Analytical</option>
               <option value="data structures">Data Structures</option>
             </select>
-            <div className="flex justify-between mt-6">
+            <div className="flex justify-center mt-6">
               <button
                 onClick={handleGenerateQuestions}
                 disabled={loading}
