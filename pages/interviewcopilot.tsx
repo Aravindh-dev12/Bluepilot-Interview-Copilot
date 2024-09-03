@@ -134,7 +134,7 @@ const InterviewCopilot = () => {
         <h2 className="text-4xl font-semibold mb-10">
           Ready to <span className="bg-gradient-to-r from-[#4895ef] to-[#c77dff] bg-clip-text text-transparent">Get Started ?</span>
         </h2>
-          <Link href="/Interview">
+          <Link href="/dashboard">
           <button
                   className="bg-btn-grad text-black bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-6 text-lg w-64"
                 >
