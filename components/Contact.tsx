@@ -16,7 +16,8 @@ const SubscriptionForm: React.FC = () => {
         <input
           type="email"
           placeholder="Write your email*"
-          className="border border-gray-300 rounded-full px-4 py-2 w-full max-w-md focus:outline-none"
+          style={{ width: '400px' }} // Adjust the width as needed
+          className="border border-gray-300 rounded-full px-4 py-2 focus:outline-none"
         />
         <button className="bg-btn-grad text-white bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full px-4 py-3 text-lg w-38">
           Subscribe

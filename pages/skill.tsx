@@ -21,7 +21,7 @@ const skill = () => {
             {/* Feature 1 */}
             <div className="flex flex-col items-center p-8 w-full md:w-[300px] min-h-[350px]">
               <div className="rounded-full p-4 mb-4">
-                <img src="/precision.png" alt="Skill Analysis" className="h-16 w-16" />
+                <img src="/precision.png" alt="Skill Analysis" className="h-20 w-20" />
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
                 Skill Analysis
@@ -34,7 +34,7 @@ const skill = () => {
             {/* Feature 2 */}
             <div className="flex flex-col items-center p-8 w-full md:w-[300px] min-h-[350px]">
               <div className="rounded-full p-4 mb-4">
-                <img src="/learning.png" alt="Personalized Learning" className="h-16 w-16" />
+                <img src="/learning.png" alt="Personalized Learning" className="h-20 w-20" />
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
                 Personalized Learning
@@ -47,7 +47,7 @@ const skill = () => {
             {/* Feature 3 */}
             <div className="flex flex-col items-center p-8 w-full md:w-[300px] min-h-[350px]">
               <div className="rounded-full p-4 mb-4">
-                <img src="/save.png" alt="Progress Tracking" className="h-16 w-16" />
+                <img src="/save.png" alt="Progress Tracking" className="h-20 w-20" />
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
                 Progress Tracking
@@ -66,19 +66,7 @@ const skill = () => {
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-40 mt-20">
             {/* Top Section */}
             <div className="flex flex-col justify-center">
-              <img src="/path/to/skill-icon.png" alt="Skill Icon" className="mb-6 w-16 h-16" />
-              <div className="flex space-x-6">
-                {/* Cards */}
-                <div className="bg-white shadow-md rounded-lg p-4">
-                  <img src="/path/to/skill-template1.png" alt="Skill Template 1" />
-                </div>
-                <div className="bg-white shadow-md rounded-lg p-4">
-                  <img src="/path/to/skill-template2.png" alt="Skill Template 2" />
-                </div>
-                <div className="bg-white shadow-md rounded-lg p-4">
-                  <img src="/path/to/skill-template3.png" alt="Skill Template 3" />
-                </div>
-              </div>
+              <img src="/skill.png" alt="Skill Icon" className="mb-6 w-200 h-86" />
             </div>
 
             <div className="flex flex-col justify-center text-left w-full lg:w-[500px] mx-auto">
@@ -90,18 +78,20 @@ const skill = () => {
 
             {/* Bottom Section */}
             <div className="flex flex-col items-start text-left w-full lg:w-[500px] mx-auto">
-              <h2 className="text-3xl font-bold mb-4">Create a Personalized Learning Path</h2>
+              <h2 className="text-3xl font-bold mb-4">Tailored Learning Journey for You</h2>
               <p className="text-lg mb-6">
                 Design a custom learning journey with our AI tool. Receive personalized exercises, actionable feedback, and targeted resources to effectively develop your skills and achieve your career objectives.
               </p>
             </div>
 
             <div className="flex justify-center">
-              <img src="/path/to/skill-path-icon.png" alt="Custom Path Icon" className="mb-6 w-16 h-16" />
-              <div className="bg-white shadow-md rounded-lg p-4">
-                <img src="/path/to/skill-application-path.png" alt="Custom Learning Path" />
-              </div>
+              <img 
+                src="/skill1.png" 
+                alt="Custom Path Icon" 
+                className="mb-16 w-200 h-98 ml-16" // Adjust ml-4 to your preferred spacing
+              />
             </div>
+
           </div>
         </div>
 

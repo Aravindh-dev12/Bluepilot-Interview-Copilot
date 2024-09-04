@@ -9,7 +9,7 @@ const BlogPage: React.FC = () => {
       summary: "Discover how Bluepilot Interview Copilot is transforming the way people prepare for interviews with innovative tools and strategies."
     },
     {
-      title: "How Real-Time Audio Transcription Transforms the Interview Experience",
+      title: "How Real-Time Audio Transcription: Transforms the Interview Experience",
       summary: "Learn about the impact of real-time audio transcription on enhancing interview experiences and improving accuracy."
     },
     {
@@ -31,41 +31,35 @@ const BlogPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5] flex flex-col items-center p-6">
-      <div className="w-full max-w-7xl">
-        <section className="text-center mb-20 mt-20">  {/* Increased margin at the top */}
-          <h1 className="text-4xl md:text-4xl font-extrabold text-black mb-4">
+    <div className="min-h-screen bg-[#f5f5f5] flex flex-col items-center p-4">
+      <div className="w-full max-w-6xl">
+        <section className="text-center mb-16 mt-16">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-black mb-3">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff]">
               Discover Our Blog
             </span>
-            <span className="text-gray-800 block mt-2">Latest Insights and Innovations</span>
+            <span className="text-gray-800 block mt-1">Latest Insights and Innovations</span>
           </h1>
         </section>
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {blogs.map((blog, index) => (
-            <div
-              key={index}
-              className={`p-6 bg-white shadow-lg rounded-lg flex flex-col justify-between transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl ${index % 2 === 0 ? 'translate-y-2' : '-translate-y-2'}`}
-              style={{ height: '22rem' }}
-            >
-              <div>
-                <h3 className="text-2xl font-semibold mb-3 text-black">
-                  {blog.title.split(":")[0]}
-                </h3>
-                <h4 className="text-xl font-semibold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff]">
-                  {blog.title.split(":")[1]}
-                </h4>
-                <p className="text-gray-600 text-md leading-relaxed">
-                  {blog.summary}
-                </p>
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogs.map((blog, index) => {
+            const [titleMain, titleSubtitle] = blog.title.split(":");
+            return (
+              <div
+                key={index}
+                className="p-6 bg-white shadow-md rounded-lg flex flex-col justify-between border border-gray-200 hover:border-gray-300 transition-all duration-300 min-w-[350px] min-h-[350px]" // Adjusted width and height
+              >
+                <div>
+                  <h3 className="text-xl font-bold mb-2 text-black">
+                    {titleMain.trim()}
+                  </h3>
+                  <p className="text-gray-700 text-sm leading-relaxed mt-40">
+                    {blog.summary}
+                  </p>
+                </div>
               </div>
-              <div className="mt-4">
-                <a href="#" className="text-[#4895ef] font-bold text-md">
-                  Read More →
-                </a>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </section>
       </div>
     </div>

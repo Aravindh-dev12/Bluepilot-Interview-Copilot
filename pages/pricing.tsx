@@ -10,6 +10,7 @@ const PricingPlans: React.FC = () => {
       features: [
         "AI Interview Copilot - 1 session",
         "AI Skill Development - 1 assessment",
+        "AI Application Tailor - Unlimited",
         "24/7 Customer Support",
         "7-day limited access"
       ],
@@ -21,17 +22,21 @@ const PricingPlans: React.FC = () => {
       features: [
         "AI Interview Copilot - 3 sessions/month",
         "AI Skill Development - Up to 5 assessments/month",
+        "Resume Builder - Unlimited access",
+        "Application Tailor - Unlimited access",
         "24/7 Customer Support"
       ],
       isPro: false,
     },
     {
       title: "Pro",
-      price: "$49.00 per month",
+      price: "$59.00 per month",
       features: [
         "AI Interview Copilot - Unlimited sessions",
         "AI Skill Development - Unlimited assessments",
         "AI Application Tailor - Unlimited access",
+        "Resume Builder - Unlimited access",
+        "Question Bank - Unlimited access",
         "24/7 Customer Support"
       ],
       isPro: true,
@@ -43,21 +48,24 @@ const PricingPlans: React.FC = () => {
       {plans.map((plan, index) => (
         <div
           key={index}
-          className={`border rounded-lg p-6 shadow-md bg-white text-gray-800 w-full md:w-1/4 ${
-            plan.isPro ? 'border-blue-600' : ''
+          className={`flex flex-col justify-between border rounded-lg p-6 shadow-md bg-white text-gray-800 w-full md:w-1/3 ${
+            plan.isPro ?'' : ''
           }`}
+          style={{ height: '550px' }} // Increased the height slightly
         >
-          <h3 className="text-xl font-semibold mb-4 text-center">{plan.title}</h3>
-          <p className="text-3xl font-bold mb-6 text-center">{plan.price}</p>
-          <ul className="mb-6 text-left">
-            {plan.features.map((feature, i) => (
-              <li key={i} className="mb-2 flex items-center">
-                <span className="mr-2">✔️</span>{feature}
-              </li>
-            ))}
-          </ul>
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-center">{plan.title}</h3>
+            <p className="text-3xl font-bold mb-6 text-center">{plan.price}</p>
+            <ul className="mb-6 text-left">
+              {plan.features.map((feature, i) => (
+                <li key={i} className="mb-2 flex items-center">
+                  <span className="mr-2">✔️</span>{feature}
+                </li>
+              ))}
+            </ul>
+          </div>
           <button
-            className="w-full py-2 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700"
+            className="w-full py-2 rounded bg-gray-200 text-black border-2 font-semibold border-black mt-auto"
           >
             {plan.title === 'Free Trial' ? 'Start Free Trial' : 'Choose Plan'}
           </button>

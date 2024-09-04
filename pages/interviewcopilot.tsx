@@ -91,19 +91,7 @@ const InterviewCopilot = () => {
       
       {/* Top Section */}
       <div className="flex flex-col justify-center">
-        <img src="/path/to/icon-ai.png" alt="AI Icon" className="mb-6 w-16 h-16" />
-        <div className="flex space-x-6">
-          {/* Cards */}
-          <div className="bg-white shadow-md rounded-lg p-4">
-            <img src="/path/to/template1.png" alt="Template 1" />
-          </div>
-          <div className="bg-white shadow-md rounded-lg p-4">
-            <img src="/path/to/template2.png" alt="Template 2" />
-          </div>
-          <div className="bg-white shadow-md rounded-lg p-4">
-            <img src="/path/to/template3.png" alt="Template 3" />
-          </div>
-        </div>
+        <img src="/interview.png" alt="AI Icon" className="mb-6 w-200 h-86"  />
       </div>
 
       <div className="flex flex-col justify-center text-left w-full lg:w-[500px] mx-auto">
@@ -122,10 +110,11 @@ const InterviewCopilot = () => {
       </div>
 
       <div className="flex justify-center">
-        <img src="/path/to/icon-path.png" alt="Custom Path Icon" className="mb-6 w-16 h-16" />
-        <div className="bg-white shadow-md rounded-lg p-4">
-          <img src="/path/to/custom-application-path.png" alt="Custom Application Path" />
-        </div>
+              <img 
+                src="/realtime.png" 
+                alt="Custom Path Icon" 
+                className="mb-6 w-220 h-98 ml-16" // Adjust ml-4 to your preferred spacing
+              />
       </div>
     </div>
         </div>
