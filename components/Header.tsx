@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import '../app/globals.css';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,7 +47,7 @@ const Header = () => {
         <Link href="/Interviewcopilot" className="hover:underline">Interview Copilot</Link>
         <Link href="/skill" className="hover:underline">Skill Development</Link>
         <Link href="/dashboard" className="hover:underline flex items-center"> Question Bank</Link>
-        <Link href="/TrainerModule" className="relative flex items-center hover:underline">
+        <Link href="/Skilltraining" className="relative flex items-center hover:underline">
           AI SoftSkill Trainer
           <span className="ml-2 bg-blue-500 text-xs text-gray-800 px-2 py-1 rounded-full relative z-10">
             Beta
@@ -69,7 +70,7 @@ const Header = () => {
             <Link href="/Interviewcopilot" className="text-2xl" onClick={toggleMenu}>Interview Copilot</Link>
             <Link href="/skill" className="text-2xl" onClick={toggleMenu}>Skill Development</Link>
             <Link href="/dashboard" className="text-2xl flex items-center" onClick={toggleMenu}> Question Bank</Link>
-            <Link href="/TrainerModule" className="relative flex items-center hover:underline">
+            <Link href="/Skilltraining" className="relative flex items-center hover:underline">
               AI SoftSkill Trainer
               <span className="ml-2 bg-blue-500 text-xs text-gray-800 px-2 py-1 rounded-full relative z-10">
                 Beta
