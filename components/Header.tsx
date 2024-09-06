@@ -19,13 +19,19 @@ const Header = () => {
         <Link href="/signup" className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg hover:bg-gray-200">
           Sign up
         </Link>
-        <button onClick={toggleMenu} className="focus:outline-none">
+        <button
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          className="focus:outline-none"
+        >
           <svg
             className="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -39,8 +45,13 @@ const Header = () => {
       <nav className="hidden md:flex space-x-16 text-lg">
         <Link href="/Interviewcopilot" className="hover:underline">Interview Copilot</Link>
         <Link href="/skill" className="hover:underline">Skill Development</Link>
-        <Link href="/dashboard" className="hover:underline">Resume Builder</Link>
-        <Link href="/JobApplicationTailor" className="hover:underline flex items-center"> Question Bank</Link>
+        <Link href="/dashboard" className="hover:underline flex items-center"> Question Bank</Link>
+        <Link href="/TrainerModule" className="relative flex items-center hover:underline">
+          AI SoftSkill Trainer
+          <span className="ml-2 bg-blue-500 text-xs text-gray-800 px-2 py-1 rounded-full relative z-10">
+            Beta
+          </span>
+        </Link>
       </nav>
       <Link href="/signup" className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg hover:bg-gray-200">
         Sign up
@@ -49,6 +60,7 @@ const Header = () => {
         <div className="fixed inset-0 bg-white z-50 flex flex-col">
           <button 
             onClick={toggleMenu} 
+            aria-label="Close menu"
             className="absolute top-4 right-4 text-gray-600 text-3xl"
           >
             &times;
@@ -56,8 +68,13 @@ const Header = () => {
           <nav className="flex flex-col items-start space-y-6 p-6 mt-20">
             <Link href="/Interviewcopilot" className="text-2xl" onClick={toggleMenu}>Interview Copilot</Link>
             <Link href="/skill" className="text-2xl" onClick={toggleMenu}>Skill Development</Link>
-            <Link href="/dashboard" className="text-2xl" onClick={toggleMenu}>Resume Builder</Link>
-            <Link href="/JobApplicationTailor" className="text-2xl flex items-center" onClick={toggleMenu}> Question Bank</Link>
+            <Link href="/dashboard" className="text-2xl flex items-center" onClick={toggleMenu}> Question Bank</Link>
+            <Link href="/TrainerModule" className="relative flex items-center hover:underline">
+              AI SoftSkill Trainer
+              <span className="ml-2 bg-blue-500 text-xs text-gray-800 px-2 py-1 rounded-full relative z-10">
+                Beta
+              </span>
+            </Link>
           </nav>
         </div>
       )}

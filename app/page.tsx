@@ -4,7 +4,6 @@ import Service from "@/components/Service";
 import AiInterview from "@/components/AiInterview"; 
 import AiSkill from "@/components/AiSkill";
 import Application from "@/components/Application";
-import Blog from "@/components/Blog"; 
 import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -18,7 +17,6 @@ export default function Home() {
       <AiInterview />
       <AiSkill />
       <Application />
-      <Blog />
       <Faq />
       <Contact />
       <Footer />

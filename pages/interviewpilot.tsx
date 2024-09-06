@@ -69,7 +69,7 @@ const Interviewpilot = () => {
   return (
     <div className="min-h-screen text-gray-900">
       <div className="min-h-screen p-2">
-        <div className="max-w-7xl mx-auto mb-2 p-6 rounded-lg">
+        <div className="max-w-8xl mx-auto mb-2 p-6 rounded-lg">
           <h1 className="text-2xl font-semibold text-gray-900">Interviews</h1>
           <p className="text-gray-600">
             Develop a diverse range of interview techniques tailored to various fields, then thoroughly analyze expert insights and evaluations.

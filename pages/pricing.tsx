@@ -10,7 +10,7 @@ const PricingPlans: React.FC = () => {
       features: [
         "AI Interview Copilot - 1 session",
         "AI Skill Development - 1 assessment",
-        "AI Application Tailor - Unlimited",
+        "Career Assistant - Unlimited",
         "24/7 Customer Support",
         "7-day limited access"
       ],
@@ -21,9 +21,9 @@ const PricingPlans: React.FC = () => {
       price: "$29.00 per month",
       features: [
         "AI Interview Copilot - 3 sessions/month",
-        "AI Skill Development - Up to 5 assessments/month",
+        "AI Skill Development - Up to 3 assessments/month",
         "Resume Builder - Unlimited access",
-        "Application Tailor - Unlimited access",
+        "Career Assistant - Unlimited access",
         "24/7 Customer Support"
       ],
       isPro: false,
@@ -34,7 +34,7 @@ const PricingPlans: React.FC = () => {
       features: [
         "AI Interview Copilot - Unlimited sessions",
         "AI Skill Development - Unlimited assessments",
-        "AI Application Tailor - Unlimited access",
+        "Career Assistant - Unlimited access",
         "Resume Builder - Unlimited access",
         "Question Bank - Unlimited access",
         "24/7 Customer Support"
@@ -44,7 +44,7 @@ const PricingPlans: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row justify-center items-center gap-4 p-8 bg-gray-50">
+    <div className="flex flex-col md:flex-row justify-center items-center gap-4 p-8">
       {plans.map((plan, index) => (
         <div
           key={index}

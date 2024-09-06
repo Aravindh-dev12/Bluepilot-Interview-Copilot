@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode, faChartLine, faNewspaper, faSlidersH, faTh, faLifeRing, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Skilldevelopment from './skilldevelopment'; 
 import Resumebuilder from './resumebuilder'; 
-import ApplicationTailor from './applicationtailor';
+import Assistant from './assistant'; // Fixed import
 import Question from './question';
 import Interviewpilot from './interviewpilot';
 import PricingPlans from './pricing'; 
@@ -33,10 +33,10 @@ const Dashboard: React.FC = () => {
             <Link href="/">
               <h2 className="text-3xl font-bold text-gray-800 cursor-pointer ml-4">Bluepilot</h2>
             </Link>
-            <nav className="mt-4">
-              <h2 className="text-sm font-bold text-gray-600 ml-2 mb-4">Tools</h2>
+            <nav className="mt-10">
+              <h2 className="text-sm font-bold text-gray-600 ml-2 mb-4 ">Tools</h2>
               <ul>
-                <li className="mb-10">
+                <li className="mb-12">
                   <a
                     onClick={() => handleNavClick('interviewpilot')}
                     className={`flex items-center space-x-7 text-gray-900 text-1xl cursor-pointer ${
@@ -47,7 +47,7 @@ const Dashboard: React.FC = () => {
                     <span>Interview Copilot</span>
                   </a>
                 </li>
-                <li className="mb-10">
+                <li className="mb-12">
                   <a
                     onClick={() => handleNavClick('skilldevelopment')}
                     className={`flex items-center space-x-8 text-gray-900 text-1xl cursor-pointer ${
@@ -58,7 +58,7 @@ const Dashboard: React.FC = () => {
                     <span>AI Skill Development</span>
                   </a>
                 </li>
-                <li className="mb-10">
+                <li className="mb-12">
                   <a
                     onClick={() => handleNavClick('resumebuilder')}
                     className={`flex items-center space-x-8 text-gray-900 text-1xl cursor-pointer ${
@@ -69,18 +69,18 @@ const Dashboard: React.FC = () => {
                     <span>AI Resume Builder</span>
                   </a>
                 </li>
-                <li className="mb-10">
+                <li className="mb-12">
                   <a
-                    onClick={() => handleNavClick('applicationtailor')}
+                    onClick={() => handleNavClick('assistant')}
                     className={`flex items-center space-x-8 text-gray-900 text-1xl cursor-pointer ${
-                      activeSection === 'applicationtailor' ? 'font-bold text-blue-500' : ''
+                      activeSection === 'assistant' ? 'font-bold text-blue-500' : ''
                     }`}
                   >
                     <FontAwesomeIcon icon={faSlidersH} size="lg" />
-                    <span>Application Tailor</span>
+                    <span>Career Assistant</span>
                   </a>
                 </li>
-                <li className="mb-10">
+                <li className="mb-12">
                   <a
                     onClick={() => handleNavClick('question')}
                     className={`flex items-center space-x-8 text-gray-900 text-1xl cursor-pointer ${
@@ -138,7 +138,7 @@ const Dashboard: React.FC = () => {
         )}
         {activeSection === 'skilldevelopment' && <Skilldevelopment />}
         {activeSection === 'resumebuilder' && <Resumebuilder />}
-        {activeSection === 'applicationtailor' && <ApplicationTailor />}
+        {activeSection === 'assistant' && <Assistant />}
         {activeSection === 'question' && <Question />}
         {activeSection === 'interviewpilot' && <Interviewpilot />}
         {activeSection === 'pricing' && <PricingPlans />} 
