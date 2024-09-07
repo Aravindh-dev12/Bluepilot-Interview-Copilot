@@ -43,15 +43,12 @@ const Header = () => {
           </svg>
         </button>
       </div>
-      <nav className="hidden md:flex space-x-16 text-lg">
+      <nav className="hidden md:flex space-x-16 text-1xl">
         <Link href="/Interviewcopilot" className="hover:underline">Interview Copilot</Link>
         <Link href="/skill" className="hover:underline">Skill Development</Link>
         <Link href="/dashboard" className="hover:underline flex items-center"> Question Bank</Link>
         <Link href="/Skilltraining" className="relative flex items-center hover:underline">
-          AI SoftSkill Trainer
-          <span className="ml-2 bg-blue-500 text-xs text-gray-800 px-2 py-1 rounded-full relative z-10">
-            Beta
-          </span>
+          AI SoftSkill Training
         </Link>
       </nav>
       <Link href="/signup" className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg hover:bg-gray-200">
@@ -70,11 +67,8 @@ const Header = () => {
             <Link href="/Interviewcopilot" className="text-2xl" onClick={toggleMenu}>Interview Copilot</Link>
             <Link href="/skill" className="text-2xl" onClick={toggleMenu}>Skill Development</Link>
             <Link href="/dashboard" className="text-2xl flex items-center" onClick={toggleMenu}> Question Bank</Link>
-            <Link href="/Skilltraining" className="relative flex items-center hover:underline">
-              AI SoftSkill Trainer
-              <span className="ml-2 bg-blue-500 text-xs text-gray-800 px-2 py-1 rounded-full relative z-10">
-                Beta
-              </span>
+            <Link href="/Skilltraining" className=" text-2xl relative flex items-center hover:underline">
+              AI SoftSkill Training
             </Link>
           </nav>
         </div>
