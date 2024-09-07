@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Link from 'next/link'; // Import Link
+import Link from 'next/link';
+import { useRouter } from 'next/router'; // Import useRouter
 import '../app/globals.css';
-import Home from '../components/Home';
+
 
 const LoginSignup: React.FC = () => {
   const [showLogin, setShowLogin] = useState(true);
@@ -14,22 +15,28 @@ const LoginSignup: React.FC = () => {
   const [authenticated, setAuthenticated] = useState(false);
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await axios.post("http://127.0.0.1:5000/api/auth/login", { email, password });
-      console.log('Login successful:', response.data);
-      localStorage.setItem('token', response.data.token);
-      setAuthenticated(true);
-    } catch (error) {
-      setError('Login failed. Please try again.');
-      console.error('Login error:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const router = useRouter(); // Initialize useRouter
+
+ // Login component code
+const handleLogin = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  setError(null);
+  try {
+    const response = await axios.post("http://127.0.0.1:5000/api/auth/login", { email, password });
+    console.log('Login successful:', response.data);
+    localStorage.setItem('token', response.data.token);
+    localStorage.setItem('userName', response.data.user.name); // Store user's name
+    setAuthenticated(true);
+    router.push('/dashboard'); // Redirect to the dashboard page
+  } catch (error) {
+    setError('Login failed. Please try again.');
+    console.error('Login error:', error);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,10 +61,6 @@ const LoginSignup: React.FC = () => {
       y: prevPosition.y + movementY,
     }));
   };
-
-  if (authenticated) {
-    return <Home />;
-  }
 
   return (
     <section className="relative w-full h-screen flex">
@@ -194,7 +197,7 @@ const LoginSignup: React.FC = () => {
                 />
               </div>
               {error && <p className="text-red-500 mb-4" aria-live="polite">{error}</p>}
-              <div className="flex justify-center mt-8">
+              <div className="flex justify-center mt-4">
                 <button type="submit" className="border-2 border-black bg-gray-100 text-black px-4 py-2 text-lg rounded-full hover:bg-gray-100 w-full max-w-xs mx-auto" disabled={loading}>
                   {loading ? 'Loading...' : 'Sign Up'}
                 </button>

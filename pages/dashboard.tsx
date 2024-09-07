@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode, faChartLine, faNewspaper, faSlidersH, faTh, faLifeRing, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Skilldevelopment from './skilldevelopment'; 
 import Resumebuilder from './resumebuilder'; 
-import Assistant from './assistant'; // Fixed import
+import Assistant from './assistant';
 import Question from './question';
 import Interviewpilot from './interviewpilot';
 import PricingPlans from './pricing'; 
 import HelpcenterForm from './HelpcenterForm';
-import Link from 'next/link'; // Import Link from next/link for Next.js projects
+import Link from 'next/link';
 import '../app/globals.css';
 
 type Section = 'dashboard' | 'interviewpilot' | 'skilldevelopment' | 'resumebuilder' | 'applicationtailor' | 'question' | 'pricing' | 'HelpcenterForm';
@@ -16,10 +16,22 @@ type Section = 'dashboard' | 'interviewpilot' | 'skilldevelopment' | 'resumebuil
 const Dashboard: React.FC = () => {
   const [activeSection, setActiveSection] = useState<Section>('dashboard');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [userName, setUserName] = useState<string>('');
+
+  useEffect(() => {
+    // Retrieve the user's name from localStorage
+    const storedUserName = localStorage.getItem('userName');
+    if (storedUserName) {
+      setUserName(storedUserName);
+    } else {
+      // Optionally handle the case where username is not found
+      setUserName('User');
+    }
+  }, []);
 
   const handleNavClick = (section: Section) => {
     setActiveSection(section);
-    setIsSidebarOpen(false); // Close sidebar after navigating
+    setIsSidebarOpen(false);
   };
 
   return (
@@ -34,7 +46,7 @@ const Dashboard: React.FC = () => {
               <h2 className="text-3xl font-bold text-gray-800 cursor-pointer ml-4">Bluepilot</h2>
             </Link>
             <nav className="mt-10">
-              <h2 className="text-sm font-bold text-gray-600 ml-2 mb-4 ">Tools</h2>
+              <h2 className="text-sm font-bold text-gray-600 ml-2 mb-4">Tools</h2>
               <ul>
                 <li className="mb-12">
                   <a
@@ -109,7 +121,7 @@ const Dashboard: React.FC = () => {
             </ul>
             <div className="flex items-center mb-6">
               <div className="w-14 h-14 bg-gray-300 rounded-full mr-3"></div>
-              <span className="font-semibold text-1xl">John Doe</span>
+              <span className="font-semibold text-1xl">{userName}</span>
             </div>
             <button
               className="w-full bg-btn-grad text-black bg-[length:200%] bg-left transition-bg duration-500 hover:bg-right rounded-full py-3"
