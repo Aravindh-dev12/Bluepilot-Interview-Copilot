@@ -32,6 +32,14 @@ const config: Config = {
       height: {
         'custom': '120vh', // Custom height value
       },
+      fontSize: {
+        '14xl': '12rem',
+        '18xl': '14rem',
+        '22xl': '16rem',
+        '24xl': '18rem',
+        '32xl': '22rem',
+        '36xl': '24rem',
+      },
     },
   },
   plugins: [

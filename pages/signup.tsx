@@ -61,15 +61,15 @@ const handleLogin = async (e: React.FormEvent) => {
       y: prevPosition.y + movementY,
     }));
   };
+  console.log('Rendering Link component');
 
   return (
     <section className="relative w-full h-screen flex">
       {/* Left edge header link */}
-      <div className="absolute top-6 left-6 p-4">
-        <Link href="/" className="text-3xl font-bold">
-          BluePilot
-        </Link>
-      </div>
+      <div className="ml-6 mt-4">
+    <Link href="/" className="text-3xl mt-10 ml-2 font-semibold">BluePilot</Link>
+    {console.log('Link rendered')}
+  </div>
 
       {/* Image container for login/signup */}
       <div className="relative w-1/2 h-full overflow-hidden">

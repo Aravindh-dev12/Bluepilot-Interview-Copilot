@@ -7,7 +7,7 @@ const skilldevelopment: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [tutorial, setTutorial] = useState<string | null>(null);
   const [examples, setExamples] = useState<string | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false); 
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -77,15 +77,12 @@ const skilldevelopment: React.FC = () => {
           </button>
         </div>
       </section>
-
-      {/* Modal for the form */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
           <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200 w-full max-w-3xl relative">
-            {/* Cancel Icon */}
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-6 right-4 text-gray-600 hover:text-gray-900 text-3xl"
+              className="absolute top-0 right-2 text-gray-600 hover:text-gray-900 text-3xl"
             >
               &times;
             </button>

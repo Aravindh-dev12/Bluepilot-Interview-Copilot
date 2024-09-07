@@ -77,7 +77,7 @@ const Assistant = () => {
             <h2 className="text-xl text-gray-600">Ask your career questions and get instant responses!</h2>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               {[
-                "Create an image for my resume",
+                "Can you help me create a resume for Data Scientist ?",
                 "What skills are required for a career in AI?",
                 "Top interview tips for software engineering",
                 "Make me a personal portfolio website",
