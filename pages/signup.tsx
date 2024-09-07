@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link'; // Import Link
-import { useRouter } from 'next/router'; // Import useRouter for navigation
 import '../app/globals.css';
 import Home from '../components/Home';
 
 const LoginSignup: React.FC = () => {
-  const router = useRouter(); // Initialize router for navigation
   const [showLogin, setShowLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,7 +23,6 @@ const LoginSignup: React.FC = () => {
       console.log('Login successful:', response.data);
       localStorage.setItem('token', response.data.token);
       setAuthenticated(true);
-      router.push('/dashboard'); // Redirect to the dashboard page after successful login
     } catch (error) {
       setError('Login failed. Please try again.');
       console.error('Login error:', error);
@@ -65,8 +62,8 @@ const LoginSignup: React.FC = () => {
   return (
     <section className="relative w-full h-screen flex">
       {/* Left edge header link */}
-      <div className="absolute top-4 left-3 p-4">
-        <Link href="/" className="text-3xl font-semibold">
+      <div className="absolute top-6 left-6 p-4">
+        <Link href="/" className="text-3xl font-bold">
           BluePilot
         </Link>
       </div>
@@ -209,7 +206,7 @@ const LoginSignup: React.FC = () => {
                 onClick={() => setShowLogin(true)}
                 className="rounded-3xl py-2 px-2 text-black"
               >
-                Sign In
+                Log In
               </button>
             </div>
           </div>
