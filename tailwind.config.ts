@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -24,13 +25,13 @@ const config: Config = {
         '200': '200%',
       },
       transitionProperty: {
-        'bg': 'background-position, color',
+        bg: 'background-position, color',
       },
       fontFamily: {
         kabel: ['Informal011 BT'],
       },
       height: {
-        'custom': '120vh', // Custom height value
+        custom: '120vh',
       },
       fontSize: {
         '14xl': '12rem',
