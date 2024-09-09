@@ -93,7 +93,7 @@ const Dashboard: React.FC = () => {
         <div className="flex flex-col h-full justify-between">
           <div>
             <Link href="/">
-              <h2 className="text-3xl font-bold text-gray-800 cursor-pointer ml-4">Bluepilot</h2>
+              <h2 className="text-3xl font-bold text-gray-800 cursor-pointer ml-6">Bluepilot AI</h2>
             </Link>
             <nav className="mt-10">
               <h2 className="text-sm font-bold text-gray-600 ml-2 mb-4">Tools</h2>

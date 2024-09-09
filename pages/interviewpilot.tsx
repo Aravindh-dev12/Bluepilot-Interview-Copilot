@@ -170,7 +170,7 @@ const Interviewpilot = () => {
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-2xl max-w-md w-full">
-            <h2 className="text-xl font-semibold mb-4">Create Interview</h2>
+            <h2 className="text-xl bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md text-center font-semibold mb-4">Create Interview</h2>
             <form onSubmit={handleFormSubmit}>
               <div className="mb-4">
                 <label className="block text-gray-700">Company</label>

@@ -74,7 +74,7 @@ const Assistant = () => {
         {!hasConversationStarted && (
           <div className="text-center mb-4">
             <h1 className="text-3xl font-bold mb-2">AI Career Assistant</h1>
-            <h2 className="text-xl text-gray-600">Ask your career questions and get instant responses!</h2>
+            <h2 className="bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md">Ask your career questions and get instant responses!</h2>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               {[
                 "Can you help me create a resume for Data Scientist ?",
@@ -100,7 +100,7 @@ const Assistant = () => {
           <div ref={chatEndRef} /> {/* Scroll target */}
         </div>
       </div>
-      <div className="bottom-0 left-0 w-full p-6 border-t border-gray-300 bg-white">
+      <div className="bottom-0 left-0 w-full p-6 border-t border-gray-100 bg-white">
         <div className="relative flex items-center max-w-lg mx-auto">
           <input
             type="text"

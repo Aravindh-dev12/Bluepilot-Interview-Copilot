@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../app/globals.css';
+import Questionssample from '../components/Questionssample'; // Import the Questionssample component
 
 const QuestionBox: React.FC = () => {
   const [company, setCompany] = useState<string>('');
   const [role, setRole] = useState<string>('');
   const [category, setCategory] = useState<string>('product design');
+  const [year, setYear] = useState<string>('2024');
   const [questionsAndAnswers, setQuestionsAndAnswers] = useState<[string, string][]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -23,7 +25,7 @@ const QuestionBox: React.FC = () => {
     try {
       const response = await axios.post('https://api.openai.com/v1/completions', {
         model: "text-davinci-003",
-        prompt: `Generate relevant interview questions and answers for a ${role} position at ${company} focusing on ${category}. Include both general and role-specific questions.`,
+        prompt: `Generate relevant interview questions and answers for a ${role} position at ${company} focusing on ${category} for the year ${year}. Include both general and role-specific questions.`,
         max_tokens: 600,
       }, {
         headers: {
@@ -61,15 +63,20 @@ const QuestionBox: React.FC = () => {
             onClick={() => setShowModal(true)}
             className="border-2 border-black bg-gray-100 text-black px-4 py-2 text-lg w-44 rounded-full hover:bg-gray-100"
           >
-            Generate 
+            Generate
           </button>
+
+          {/* Render the Questionssample page here */}
+          <div className="mt-6">
+            <Questionssample />
+          </div>
         </div>
       </section>
 
       {/* Modal Section */}
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+          <div className="relative bg-white rounded-lg shadow-lg p-8 max-w-lg w-full">
             {/* Cancel Icon */}
             <button
               onClick={() => setShowModal(false)}
@@ -90,8 +97,11 @@ const QuestionBox: React.FC = () => {
                 />
               </svg>
             </button>
-            
-            <h3 className="text-xl font-semibold mb-4 text-gray-800 text-center">Enter Details</h3>
+
+            <h3 className="text-xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md text-center">Enter Details</h3>
+
+            {/* Company Input */}
+            <label className="block text-gray-700 mb-2">Company Name</label>
             <input
               type="text"
               placeholder="Enter company name"
@@ -99,17 +109,23 @@ const QuestionBox: React.FC = () => {
               onChange={(e) => setCompany(e.target.value)}
               className="w-full p-4 border border-gray-300 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-black-800 placeholder-gray-500"
             />
+
+            {/* Role Input */}
+            <label className="block text-gray-700 mt-4 mb-2">Role</label>
             <input
               type="text"
               placeholder="Enter role"
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="w-full p-4 border border-gray-300 rounded-md text-gray-800 mt-4 focus:outline-none focus:ring-2 focus:ring-black-800 placeholder-gray-500"
+              className="w-full p-4 border border-gray-300 rounded-md text-gray-800 mt-2 focus:outline-none focus:ring-2 focus:ring-black-800 placeholder-gray-500"
             />
+
+            {/* Category Input */}
+            <label className="block text-gray-700 mt-4 mb-2">Category</label>
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full p-4 border border-gray-300 rounded-md text-gray-800 mt-4 focus:outline-none focus:ring-2 focus:ring-black-800"
+              className="w-full p-4 border border-gray-300 rounded-md text-gray-800 mt-2 focus:outline-none focus:ring-2 focus:ring-black-800"
             >
               <option value="product design">Product Design</option>
               <option value="product strategy">Product Strategy</option>
@@ -120,6 +136,20 @@ const QuestionBox: React.FC = () => {
               <option value="analytical">Analytical</option>
               <option value="data structures">Data Structures</option>
             </select>
+
+            {/* Year Input */}
+            <label className="block text-gray-700 mt-4 mb-2">Select Year</label>
+            <select
+              value={year}
+              onChange={(e) => setYear(e.target.value)}
+              className="w-full p-4 border border-gray-300 rounded-md text-gray-800 mt-2 focus:outline-none focus:ring-2 focus:ring-black-800"
+            >
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+            </select>
+
             <div className="flex justify-center mt-6">
               <button
                 onClick={handleGenerateQuestions}
@@ -138,7 +168,7 @@ const QuestionBox: React.FC = () => {
       {questionsAndAnswers.length > 0 && (
         <div className="container mx-auto mt-20 py-4 max-w-4xl px-4">
           <h2 className="text-3xl font-semibold text-center text-gray-800 mb-12">
-            Interview Questions and Answers
+            Interview Questions and Answers for {company} - {role} ({year}, {category})
           </h2>
           <div className="bg-white shadow-md rounded-lg p-4">
             <ul className="list-disc pl-6">

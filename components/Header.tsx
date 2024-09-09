@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <header className="flex justify-between items-center font-semibold p-6 border-b border-gray-300 bg-gray-50 relative">
       <Link href="/" className="text-2xl">
-        BluePilot
+        Bluepilot
       </Link>
       <div className="md:hidden flex items-center space-x-2">
         <Link href="/signup" className="hidden md:block px-4 py-2 border-2 border-gray-800 rounded-full text-lg hover:bg-gray-200">
