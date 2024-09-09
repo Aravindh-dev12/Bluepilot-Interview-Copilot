@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaptopCode, faChartLine, faNewspaper, faSlidersH, faTh, faLifeRing, faBars, faTimes, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLaptopCode, faChartLine, faNewspaper, faSlidersH, faTh,
+  faLifeRing, faBars, faTimes, faCog, faSignOutAlt
+} from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import { useRouter } from 'next/router'; // Import useRouter for navigation
 import Modal from '../components/modal';
 import '../app/globals.css';
 
@@ -28,8 +32,6 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     const storedUserName = localStorage.getItem('userName');
     setUserName(storedUserName || 'User');
-
-    // Removed dark mode handling
 
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
