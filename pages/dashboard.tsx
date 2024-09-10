@@ -93,7 +93,7 @@ const Dashboard: React.FC = () => {
         <div className="flex flex-col h-full justify-between">
           <div>
             <Link href="/">
-              <h2 className="text-3xl font-bold text-gray-800 cursor-pointer ml-6">Bluepilot AI</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 cursor-pointer ml-6">Bluepilot AI</h2>
             </Link>
             <nav className="mt-10">
               <h2 className="text-sm font-bold text-gray-600 ml-2 mb-4">Tools</h2>
@@ -165,7 +165,7 @@ const Dashboard: React.FC = () => {
       {/* Main Content */}
       <main className="flex-1 min-w-0 p-4 ml-0 md:ml-[1.0%] overflow-y-auto">
         <Suspense fallback={<div>Loading...</div>}>
-          {activeSection === 'dashboard' && <div>Dashboard content here</div>}
+          {activeSection === 'dashboard' && <div></div>}
           {activeSection === 'skilldevelopment' && <Skilldevelopment />}
           {activeSection === 'resumebuilder' && <Resumebuilder />}
           {activeSection === 'assistant' && <Assistant />}
