@@ -28,6 +28,7 @@ const Dashboard: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const router = useRouter(); // Initialize router for navigation
 
   useEffect(() => {
     const storedUserName = localStorage.getItem('userName');
@@ -56,8 +57,13 @@ const Dashboard: React.FC = () => {
   };
 
   const handleLogout = () => {
-    // Implement logout logic here
-    console.log('Logged out');
+    // Clear all local storage data
+    localStorage.clear();
+
+    // Redirect to the sign-in page
+    router.push('/signup'); // Adjust this path to match your application's sign-in route
+
+    console.log('Logged out, cleared all local storage data, and redirected to sign-in page');
   };
 
   const handleOpenSettings = () => {
@@ -68,8 +74,6 @@ const Dashboard: React.FC = () => {
   const handleCloseSettings = () => {
     setIsSettingsOpen(false);
   };
-
-  // Removed handleThemeToggle function
 
   const NavigationLink: React.FC<{ icon: any; section: Section; label: string }> = ({ icon, section, label }) => (
     <li className="mb-12">
@@ -152,7 +156,6 @@ const Dashboard: React.FC = () => {
             >
               Subscribe
             </button>
-            {/* Removed theme toggle button */}
           </div>
         </div>
       </aside>
@@ -176,14 +179,13 @@ const Dashboard: React.FC = () => {
           {activeSection === 'pricing' && <PricingPlans />}
           {activeSection === 'HelpcenterForm' && <HelpcenterForm />}
         </Suspense>
+        {/* Settings Modal */}
+        <Modal isOpen={isSettingsOpen} onClose={handleCloseSettings}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Settings />
+          </Suspense>
+        </Modal>
       </main>
-
-      {/* Settings Modal */}
-      <Modal isOpen={isSettingsOpen} onClose={handleCloseSettings}>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Settings />
-        </Suspense>
-      </Modal>
     </div>
   );
 };
