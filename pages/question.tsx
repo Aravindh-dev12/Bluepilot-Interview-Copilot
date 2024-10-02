@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import OpenAI from 'openai'; // Updated import
 import '../app/globals.css';
-import Questionssample from '../components/Questionssample'; // Import the Questionssample component
+import Questionssample from '../components/Questionssample';
 
 const QuestionBox: React.FC = () => {
   const [company, setCompany] = useState<string>('');
@@ -13,6 +13,11 @@ const QuestionBox: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [showModal, setShowModal] = useState<boolean>(false);
 
+  // Initialize OpenAI API client
+  const openai = new OpenAI({
+    apiKey: 'your_openai_api_key_here', // Replace with your actual OpenAI API key
+  });
+
   const handleGenerateQuestions = async () => {
     if (!company || !role) {
       setError('Please enter both a company name and a role');
@@ -23,20 +28,19 @@ const QuestionBox: React.FC = () => {
     setError(null);
 
     try {
-      const response = await axios.post('https://api.openai.com/v1/completions', {
+      console.log('Making API request...');
+      const response = await openai.completions.create({
         model: "text-davinci-003",
         prompt: `Generate relevant interview questions and answers for a ${role} position at ${company} focusing on ${category} for the year ${year}. Include both general and role-specific questions.`,
         max_tokens: 600,
-      }, {
-        headers: {
-          'Authorization': `Bearer YOUR_API_KEY`,
-        },
       });
 
-      const data: string[] = response.data.choices[0].text.trim().split('\n');
-      const questionsAndAnswers: [string, string][] = data.map((item: string) => {
+      console.log('API response:', response);
+      const data: string = response.choices[0]?.text.trim() || '';
+      const lines = data.split('\n');
+      const questionsAndAnswers: [string, string][] = lines.map((item: string) => {
         const [question, answer] = item.split('Answer:');
-        return [question.trim(), answer ? answer.trim() : ''];
+        return [question?.trim() || '', answer?.trim() || ''];
       });
 
       setQuestionsAndAnswers(questionsAndAnswers);
@@ -66,18 +70,15 @@ const QuestionBox: React.FC = () => {
             Generate
           </button>
 
-          {/* Render the Questionssample page here */}
           <div className="mt-6">
             <Questionssample />
           </div>
         </div>
       </section>
 
-      {/* Modal Section */}
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="relative bg-white rounded-lg shadow-lg p-8 max-w-lg w-full">
-            {/* Cancel Icon */}
             <button
               onClick={() => setShowModal(false)}
               className="absolute top-2 right-2 text-gray-600 hover:text-gray-900 focus:outline-none"
@@ -100,7 +101,6 @@ const QuestionBox: React.FC = () => {
 
             <h3 className="text-xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#4895ef] to-[#c77dff] backdrop-blur-md text-center">Enter Details</h3>
 
-            {/* Company Input */}
             <label className="block text-gray-700 mb-2">Company Name</label>
             <input
               type="text"
@@ -110,7 +110,6 @@ const QuestionBox: React.FC = () => {
               className="w-full p-4 border border-gray-300 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-black-800 placeholder-gray-500"
             />
 
-            {/* Role Input */}
             <label className="block text-gray-700 mt-4 mb-2">Role</label>
             <input
               type="text"
@@ -120,7 +119,6 @@ const QuestionBox: React.FC = () => {
               className="w-full p-4 border border-gray-300 rounded-md text-gray-800 mt-2 focus:outline-none focus:ring-2 focus:ring-black-800 placeholder-gray-500"
             />
 
-            {/* Category Input */}
             <label className="block text-gray-700 mt-4 mb-2">Category</label>
             <select
               value={category}
@@ -137,7 +135,6 @@ const QuestionBox: React.FC = () => {
               <option value="data structures">Data Structures</option>
             </select>
 
-            {/* Year Input */}
             <label className="block text-gray-700 mt-4 mb-2">Select Year</label>
             <select
               value={year}
@@ -164,7 +161,6 @@ const QuestionBox: React.FC = () => {
         </div>
       )}
 
-      {/* Display Questions and Answers */}
       {questionsAndAnswers.length > 0 && (
         <div className="container mx-auto mt-20 py-4 max-w-4xl px-4">
           <h2 className="text-3xl font-semibold text-center text-gray-800 mb-12">
@@ -174,8 +170,8 @@ const QuestionBox: React.FC = () => {
             <ul className="list-disc pl-6">
               {questionsAndAnswers.map(([question, answer], index) => (
                 <li key={index} className="mb-4">
-                  <div className="font-semibold text-gray-800 mb-1">{question}</div>
-                  <div className="text-gray-700">{answer}</div>
+                  <div className="font-semibold text-lg">{question}</div>
+                  <div className="text-gray-600">{answer}</div>
                 </li>
               ))}
             </ul>
