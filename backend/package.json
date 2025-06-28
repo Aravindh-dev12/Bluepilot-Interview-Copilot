@@ -1,0 +1,40 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "clean": "rimraf dist",
+        "build": "npm run clean && node src/index.js",
+        "start": "node src/index.js",
+        "dev": "nodemon src/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "devDependencies": {
+        "nodemon": "^3.1.10",
+        "pino-pretty": "^13.1.1",
+        "rimraf": "^6.0.1"
+    },
+    "dependencies": {
+        "@anthropic-ai/sdk": "^0.60.0",
+        "@deepgram/sdk": "^3.13.0",
+        "@types/morgan": "^1.9.10",
+        "compression": "^1.8.1",
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.1",
+        "express": "^5.1.0",
+        "express-rate-limit": "^8.0.1",
+        "helmet": "^8.1.0",
+        "morgan": "^1.10.1",
+        "multer": "^1.4.5-lts.1",
+        "openai": "^5.15.0",
+        "pdf-parse": "^1.1.1",
+        "pino": "^9.9.0",
+        "pino-http": "^10.5.0",
+        "socket.io": "^4.8.1"
+    }
+}
