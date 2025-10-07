@@ -3,7 +3,7 @@ import axios from 'axios'
 import { io, type Socket } from 'socket.io-client'
 // import { BASE_URL } from '@/src/api'
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001'
-const AI_COPILOT_BASE_URL = import.meta.env.VITE_AI_COPILOT_BASE_URL || 'http://localhost:3000'
+const AI_COPILOT_BASE_URL = import.meta.env.VITE_AI_COPILOT_BASE_URL || 'https://bluepilot-interview-copilot.onrender.com'
 const API_ENDPOINTS = {
     GetInterviewSessions: `/api/session/get`,
     UpdateInterviewSession: `/api/session/update`,
