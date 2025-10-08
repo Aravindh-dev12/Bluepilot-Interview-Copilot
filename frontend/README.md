@@ -12,7 +12,7 @@ A real-time interview assistant that listens to questions and provides AI-powere
 2. **Configure OpenAI**
    Create a `.env.local` file:
    ```
-   VITE_OPENAI_API_KEY=your_openai_api_key_here
+   VITE_Anthropic_API_KEY=your_Anthropic_api_key_here
    ```
 
 3. **Start Development Server**
@@ -22,7 +22,7 @@ A real-time interview assistant that listens to questions and provides AI-powere
 
 ## Usage
 
-1. **Configure OpenAI** - Add your API key in the OpenAI Configuration section
+1. **Configure Anthropic AI** - Add your API key in the Anthropic AI Configuration section
 2. **Upload Documents** - Add your resume and job description for personalized responses
 3. **Start Listening** - Click the microphone button to begin speech recognition
 4. **Ask Questions** - Speak interview questions naturally
